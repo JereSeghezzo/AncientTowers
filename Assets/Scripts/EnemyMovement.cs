@@ -9,11 +9,6 @@ public class EnemyMovement : MonoBehaviour
     public float movementSpeed = 4;
     public float rotationSpeed = 6;
 
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
