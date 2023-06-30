@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
+using TMPro;
 
 public class DetectFloor : MonoBehaviour
 {
-    TowerGrid selectedGround;
-    public Text objetive;
+    GameObject selection;
+    TowerGrid selectedTile;
+    TowerController selectedTower;
+
+    public TMP_Text objetive;
+    [SerializeField] LayerMask whatToDetect;
 
     void Update()
     {
-        if(Input.touchCount > 0)
+      RayCastByTouch();  
+    }
+
+    void RayCastByTouch()
+    {
+      if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
          if(touch.phase == TouchPhase.Began)
@@ -18,19 +27,41 @@ public class DetectFloor : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touch.position); 
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out hit,20, whatToDetect))
             {
-              selectedGround = hit.transform.gameObject.GetComponent<TowerGrid>();
-              if(selectedGround.available)
+              selection = hit.transform.gameObject;
+              if(hit.transform.CompareTag("Tile"))
               {
-                Debug.Log("found");
-              }
-              if(selectedGround = null)
+                SelectionKindTile();                
+              } else if(hit.transform.CompareTag("Tower"))
               {
-                Destroy(hit.transform.gameObject);
+                SelectionKindTower();
               }
-            }
+            } 
          }
         }
     }
+
+    void SelectionKindTile()
+    {
+      selectedTile = selection.GetComponent<TowerGrid>();
+      if(selectedTile != null)
+            {
+              if(selectedTile.available)
+               {
+                objetive.text = "Tile Disponible";
+               }
+              if(!selectedTile.available)
+               {
+                objetive.text = "Tile Ocupada";
+               }
+            } else objetive.text = "...";
+    }
+
+    void SelectionKindTower()
+    {
+      selectedTower = selection.GetComponent<TowerController>();
+      objetive.text = "Tower";
+    }
+    
 }
