@@ -8,6 +8,7 @@ public class DetectFloor : MonoBehaviour
     GameObject selection;
     TowerGrid selectedTile;
     TowerController selectedTower;
+    [SerializeField] GameObject towerPreFab;
 
     public TMP_Text objetive;
     [SerializeField] LayerMask whatToDetect;
@@ -50,12 +51,15 @@ public class DetectFloor : MonoBehaviour
               if(selectedTile.available)
                {
                 objetive.text = "Tile Disponible";
+                Vector3 prefabPosition = selection.transform.position;
+                prefabPosition.y += 1f; 
+                Instantiate(towerPreFab, prefabPosition, selection.transform.rotation);
                }
               if(!selectedTile.available)
                {
                 objetive.text = "Tile Ocupada";
                }
-            } else objetive.text = "...";
+            } 
     }
 
     void SelectionKindTower()

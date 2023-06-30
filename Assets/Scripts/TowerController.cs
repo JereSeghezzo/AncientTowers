@@ -23,7 +23,6 @@ public class TowerController : MonoBehaviour
       {
         col.gameObject.GetComponent<TowerGrid>().available = false;
       }
-        Destroy(boxCollider, 0.2f);
-        Destroy(rigidbody, 0.3f);
+        Destroy(rigidbody, 0.2f);
     }
 }
