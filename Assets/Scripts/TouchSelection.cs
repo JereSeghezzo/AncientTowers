@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DetectFloor : MonoBehaviour
+public class TouchSelection : MonoBehaviour
 {
     GameObject selection;
-    TowerGrid selectedTile;
+    TileState selectedTile;
     TowerController selectedTower;
     [SerializeField] GameObject towerPreFab;
 
     public TMP_Text objetive;
     [SerializeField] LayerMask whatToDetect;
+    [SerializeField] GameObject buildTowerPopup;
+    bool menuMode;
+
+    void Start() 
+    {
+      buildTowerPopup.SetActive(false);
+    }
 
     void Update()
     {
@@ -20,7 +27,7 @@ public class DetectFloor : MonoBehaviour
 
     void RayCastByTouch()
     {
-      if(Input.touchCount > 0)
+      if(Input.touchCount > 0 && !menuMode)
         {
             Touch touch = Input.GetTouch(0);
          if(touch.phase == TouchPhase.Began)
@@ -45,16 +52,16 @@ public class DetectFloor : MonoBehaviour
 
     void SelectionKindTile()
     {
-      selectedTile = selection.GetComponent<TowerGrid>();
+      selectedTile = selection.GetComponent<TileState>();
       if(selectedTile != null)
             {
               if(selectedTile.available)
                {
                 objetive.text = "Tile Disponible";
-                Vector3 prefabPosition = selection.transform.position;
-                prefabPosition.y += 1f; 
-                Instantiate(towerPreFab, prefabPosition, selection.transform.rotation);
+                menuMode = true;
+                buildTowerPopup.SetActive(true);
                }
+
               if(!selectedTile.available)
                {
                 objetive.text = "Tile Ocupada";
@@ -66,6 +73,20 @@ public class DetectFloor : MonoBehaviour
     {
       selectedTower = selection.GetComponent<TowerController>();
       objetive.text = "Tower";
+    }
+    public void BuildTower()
+    {
+     Vector3 prefabPosition = selection.transform.position;
+     prefabPosition.y += 1f; 
+     Instantiate(towerPreFab, prefabPosition, selection.transform.rotation);
+     buildTowerPopup.SetActive(false);
+      menuMode = false;
+    }
+
+    public void CancelTower()
+    {
+      buildTowerPopup.SetActive(false);
+      menuMode = false;
     }
     
 }

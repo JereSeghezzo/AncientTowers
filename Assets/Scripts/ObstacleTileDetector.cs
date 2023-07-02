@@ -16,7 +16,7 @@ public class ObstacleTileDetector : MonoBehaviour
     {
       if(col.transform.CompareTag("Tile")) 
       {
-        col.gameObject.GetComponent<TowerGrid>().available = false;
+        col.gameObject.GetComponent<TileState>().available = false;
       }
         Destroy(boxCollider, 0.2f);
         Destroy(rigidbody, 0.3f);

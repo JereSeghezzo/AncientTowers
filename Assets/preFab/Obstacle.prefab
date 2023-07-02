@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1732054098225333231}
   - component: {fileID: 8005684644366359540}
   - component: {fileID: 6932314024327592118}
-  - component: {fileID: 7383225912211646460}
   - component: {fileID: 3838137635069253096}
   - component: {fileID: 2691315866153305841}
+  - component: {fileID: 9190546560345853059}
   m_Layer: 6
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8005684644366359540
 MeshFilter:
@@ -86,18 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7383225912211646460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7139324395097247815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 062267d6382fd684685a2da137ddd9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3838137635069253096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -146,3 +134,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9190546560345853059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139324395097247815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3a0bb5ad87aee46a7503266ac54cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
