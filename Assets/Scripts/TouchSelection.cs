@@ -8,12 +8,13 @@ public class TouchSelection : MonoBehaviour
     GameObject selection;
     TileState selectedTile;
     TowerController selectedTower;
-    [SerializeField] GameObject towerPreFab;
+   // [SerializeField] GameObject towerPreFab;
 
     public TMP_Text objetive;
     [SerializeField] LayerMask whatToDetect;
     [SerializeField] GameObject buildTowerPopup;
-    bool menuMode;
+    [SerializeField] TowerMenuController towerMenuController;
+    static public bool menuMode;
 
     void Start() 
     {
@@ -55,7 +56,7 @@ public class TouchSelection : MonoBehaviour
       selectedTile = selection.GetComponent<TileState>();
       if(selectedTile != null)
             {
-              if(selectedTile.available)
+              if(selectedTile.available && towerMenuController.towerToBuild != null)
                {
                 objetive.text = "Tile Disponible";
                 menuMode = true;
@@ -73,14 +74,17 @@ public class TouchSelection : MonoBehaviour
     {
       selectedTower = selection.GetComponent<TowerController>();
       objetive.text = "Tower";
+      towerMenuController.OpenUpgradeMenu();
     }
     public void BuildTower()
     {
      Vector3 prefabPosition = selection.transform.position;
      prefabPosition.y += 1f; 
-     Instantiate(towerPreFab, prefabPosition, selection.transform.rotation);
+     Instantiate(towerMenuController.towerToBuild, prefabPosition, selection.transform.rotation);
      buildTowerPopup.SetActive(false);
       menuMode = false;
+      towerMenuController.towerToBuild = null;
+
     }
 
     public void CancelTower()
