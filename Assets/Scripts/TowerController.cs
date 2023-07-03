@@ -16,7 +16,8 @@ public class TowerController : MonoBehaviour
     {
       if(col.transform.CompareTag("Tile")) 
       {
-        col.gameObject.GetComponent<TileState>().available = false;
+        col.gameObject.GetComponent<TileState>().towerObstruction = false;
+        col.gameObject.GetComponent<TileState>().UpdateTileAvailability();
       }
         Destroy(rigidbody, 0.2f);
     }

@@ -5,15 +5,14 @@ using UnityEngine;
 public class TileState : MonoBehaviour
 {
     public bool available=false;
+    public bool towerObstruction;
+    public bool obstacleObstruction;
 
-    void Start()
+ public void UpdateTileAvailability()
+ {
+    if(towerObstruction || obstacleObstruction)
     {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
+       available =  false;
+    } else available =  true;
+ }
 }

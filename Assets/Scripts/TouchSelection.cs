@@ -6,19 +6,18 @@ using TMPro;
 public class TouchSelection : MonoBehaviour
 {
     GameObject selection;
-    TileState selectedTile;
+    TileState tileState;
     TowerController selectedTower;
-   // [SerializeField] GameObject towerPreFab;
-
     public TMP_Text objetive;
     [SerializeField] LayerMask whatToDetect;
-    [SerializeField] GameObject buildTowerPopup;
+    [SerializeField] GameObject buildTowerPopup, removeObstaclePopup;
     [SerializeField] TowerMenuController towerMenuController;
     static public bool menuMode;
 
     void Start() 
     {
       buildTowerPopup.SetActive(false);
+      removeObstaclePopup.SetActive(false);
     }
 
     void Update()
@@ -36,15 +35,20 @@ public class TouchSelection : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touch.position); 
             RaycastHit hit;
 
-            if(Physics.Raycast(ray, out hit,20, whatToDetect))
+            if(Physics.Raycast(ray, out hit,Mathf.Infinity, whatToDetect))
             {
               selection = hit.transform.gameObject;
               if(hit.transform.CompareTag("Tile"))
               {
                 SelectionKindTile();                
-              } else if(hit.transform.CompareTag("Tower"))
+              } 
+              if(hit.transform.CompareTag("Tower"))
               {
                 SelectionKindTower();
+              }
+              if(hit.transform.CompareTag("Obstacle"))
+              {
+                ObstacleSelection();
               }
             } 
          }
@@ -53,17 +57,17 @@ public class TouchSelection : MonoBehaviour
 
     void SelectionKindTile()
     {
-      selectedTile = selection.GetComponent<TileState>();
-      if(selectedTile != null)
+      tileState = selection.GetComponent<TileState>();
+      if(tileState != null)
             {
-              if(selectedTile.available && towerMenuController.towerToBuild != null)
+              if(tileState.available && towerMenuController.towerToBuild != null)
                {
                 objetive.text = "Tile Disponible";
                 menuMode = true;
                 buildTowerPopup.SetActive(true);
                }
 
-              if(!selectedTile.available)
+              if(!tileState.available)
                {
                 objetive.text = "Tile Ocupada";
                }
@@ -91,6 +95,23 @@ public class TouchSelection : MonoBehaviour
     {
       buildTowerPopup.SetActive(false);
       menuMode = false;
+    }
+
+    void ObstacleSelection()
+    {
+      menuMode = true;
+       removeObstaclePopup.SetActive(true);
+    }
+    public void RemoveObstacle()
+    {
+     Destroy(selection);
+     menuMode = false;
+       removeObstaclePopup.SetActive(false);
+    }
+      public void CancelRemoveObstacle()
+    {
+      menuMode = false;
+       removeObstaclePopup.SetActive(false);
     }
     
 }
