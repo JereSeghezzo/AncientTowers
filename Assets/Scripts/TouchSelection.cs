@@ -114,5 +114,21 @@ public class TouchSelection : MonoBehaviour
       menuMode = false;
        removeObstaclePopup.SetActive(false);
     }
+
+  public void SellTower()
+  {
+    selection.GetComponent<TileStateUpdater>().LiberateTile();
+    Destroy(selection);
+    menuMode = false;
+    towerMenuController.sellMenu.SetActive(false);
+    towerMenuController.upgradesMenu.SetActive(false);
+  }
+
+  public void CancelSellTower()
+  {
+    menuMode = false;
+    towerMenuController.sellMenu.SetActive(false);
+    towerMenuController.upgradesMenu.SetActive(false);
+  }
     
 }

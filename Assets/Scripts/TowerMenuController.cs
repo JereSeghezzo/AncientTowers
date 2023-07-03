@@ -5,21 +5,14 @@ using TMPro;
 
 public class TowerMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject towerMenu;
-    [SerializeField] GameObject upgradesMenu;
-    [SerializeField] GameObject redTowerPrefab, blueTowerPrefab, greenTowerPrefab;
-    public GameObject towerToBuild;
+    [SerializeField] GameObject redTowerPrefab, blueTowerPrefab, greenTowerPrefab,towerMenu;
+    public GameObject towerToBuild, sellMenu, upgradesMenu;
     void Start()
     {
         towerMenu.SetActive(false); 
         upgradesMenu.SetActive(false); 
+        sellMenu.SetActive(false);
     }
-
-    void Update()
-    {
-        
-    }
-
     public void OpenAndCloseTowerMenu()
     {
         if(towerMenu.activeSelf || upgradesMenu.activeSelf)
@@ -61,6 +54,8 @@ public class TowerMenuController : MonoBehaviour
         upgradesMenu.SetActive(false);
         TouchSelection.menuMode = false;
     }
-
-
+ public void OpenSellMenu()
+ {
+    sellMenu.SetActive(true);
+ }
 }
