@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
+            target.gameObject.GetComponent<EnemyStats>().TakeDamage(1);
             HitTarget();
             return;
         }
