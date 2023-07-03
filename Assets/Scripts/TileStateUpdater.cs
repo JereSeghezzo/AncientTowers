@@ -25,7 +25,7 @@ public class TileStateUpdater : MonoBehaviour
         ContactedTiles.Add(col.gameObject.GetComponent<TileState>());
         if(tower)
         {
-         col.gameObject.GetComponent<TileState>().towerObstruction = true;
+         col.gameObject.GetComponent<TileState>().towerObstructionCount += 1;
         } else
         {
          col.gameObject.GetComponent<TileState>().obstacleObstruction = true;
@@ -42,7 +42,7 @@ public class TileStateUpdater : MonoBehaviour
         {
          foreach(TileState Tile in ContactedTiles)
       {
-        Tile.towerObstruction = false;
+        Tile.towerObstructionCount -= 1;
         Tile.UpdateTileAvailability();
       }
         } else
