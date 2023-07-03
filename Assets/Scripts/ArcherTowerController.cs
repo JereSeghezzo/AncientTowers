@@ -13,6 +13,8 @@ public class ArcherTowerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firePoint;
+    //float shortestDistance;
+    public float currentEnemyDistance;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -36,6 +38,15 @@ public class ArcherTowerController : MonoBehaviour
 
     void UpdateTarget()
     {
+        if(target != null)
+        {
+           currentEnemyDistance = Vector3.Distance(transform.position, target.transform.position);
+           if(currentEnemyDistance > range) target = null;
+        }
+
+         if(target == null)
+         {
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
@@ -49,6 +60,9 @@ public class ArcherTowerController : MonoBehaviour
             }
         }
 
+        currentEnemyDistance = shortestDistance;
+
+
         if (nearestEnemy != null && shortestDistance <= range) 
         {
             target = nearestEnemy.transform;
@@ -57,6 +71,7 @@ public class ArcherTowerController : MonoBehaviour
         {
             target = null;
         }
+         }
 
     }
 
