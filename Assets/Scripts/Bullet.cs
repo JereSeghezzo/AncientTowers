@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
 
     void HitTarget()
     {
-        Debug.Log("PUM");
+        Destroy(gameObject);
     }
 
 }

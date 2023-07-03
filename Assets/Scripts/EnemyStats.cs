@@ -13,6 +13,5 @@ public class EnemyStats : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
