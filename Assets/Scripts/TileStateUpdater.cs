@@ -7,6 +7,7 @@ public class TileStateUpdater : MonoBehaviour
     BoxCollider boxCollider;
     Rigidbody rigidbody;
     bool tower;
+    public List<TileState> ContactedTiles = new List<TileState>();
     void Start()
     {
        boxCollider = this.gameObject.GetComponent<BoxCollider>(); 
@@ -17,10 +18,11 @@ public class TileStateUpdater : MonoBehaviour
        }
     }
     
-    void OnTriggerStay(Collider col) 
+    void OnTriggerEnter(Collider col) 
     {
       if(col.transform.CompareTag("Tile")) 
       {
+        ContactedTiles.Add(col.gameObject.GetComponent<TileState>());
         if(tower)
         {
          col.gameObject.GetComponent<TileState>().towerObstruction = true;
@@ -32,5 +34,24 @@ public class TileStateUpdater : MonoBehaviour
       }
         //Destroy(boxCollider, 0.2f);
         Destroy(rigidbody, 0.2f);
+    }
+
+    public void LiberateTile()
+    {
+      if(tower)
+        {
+         foreach(TileState Tile in ContactedTiles)
+      {
+        Tile.towerObstruction = false;
+        Tile.UpdateTileAvailability();
+      }
+        } else
+        {
+          foreach(TileState Tile in ContactedTiles)
+      {
+        Tile.obstacleObstruction = false;
+        Tile.UpdateTileAvailability();
+      }
+        }
     }
 }

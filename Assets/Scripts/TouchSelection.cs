@@ -104,6 +104,7 @@ public class TouchSelection : MonoBehaviour
     }
     public void RemoveObstacle()
     {
+    selection.GetComponent<TileStateUpdater>().LiberateTile();
      Destroy(selection);
      menuMode = false;
        removeObstaclePopup.SetActive(false);
