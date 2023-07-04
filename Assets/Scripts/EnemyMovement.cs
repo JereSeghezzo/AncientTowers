@@ -12,10 +12,18 @@ public class EnemyMovement : MonoBehaviour
     //private Transform target;
     //private int wavepointIndex = 0;
 
-    //void Start()
-    //{
-    //    target = Waypoints.points[0];    
-    //}
+    void Start()
+    {
+        //target = Waypoints.points[0];    
+     GameObject waypointParent = GameObject.Find("Waypoints");
+     if(waypointParent != null)
+     {
+        foreach(Transform child in waypointParent.transform)
+        {
+            waypoints.Add(child);
+        }
+     }
+    }
     void Update()
     {
         Movement();
