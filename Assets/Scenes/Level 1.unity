@@ -14414,6 +14414,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie Running (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8314524936349192046, guid: e4acdc93e66fdd64e980e7b50c100b95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8658435042609518036, guid: e4acdc93e66fdd64e980e7b50c100b95,
         type: 3}
       propertyPath: m_RootOrder
@@ -75773,7 +75778,7 @@ PrefabInstance:
     - target: {fileID: 865222694152194180, guid: b9b7954acbc622843bd77cdc80633747,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 865222694152194180, guid: b9b7954acbc622843bd77cdc80633747,
         type: 3}
