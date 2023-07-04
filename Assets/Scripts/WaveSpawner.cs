@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class WaveSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
 
-    private int waveNumber = 1;
+    private int waveNumber = 0;
 
     void Update()
     {
         if (countdown <= 0f)
         {
-            SpawnWave();
+            StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
 
@@ -30,13 +31,15 @@ public class WaveSpawner : MonoBehaviour
         Instantiate(skeletonPrefab, spawnpoint.position, spawnpoint.rotation);
     }
 
-    void SpawnWave()
+    IEnumerator SpawnWave()
     {
+        waveNumber++;
+
         for (int i = 0; i < waveNumber; i++)
         {
             SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
         }
 
-        waveNumber++;
     }
 }
