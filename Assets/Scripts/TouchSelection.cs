@@ -10,7 +10,7 @@ public class TouchSelection : MonoBehaviour
     TowerController selectedTower;
     public TMP_Text objetive;
     [SerializeField] LayerMask whatToDetect;
-    [SerializeField] GameObject buildTowerPopup, removeObstaclePopup;
+    public GameObject buildTowerPopup, removeObstaclePopup;
     [SerializeField] TowerMenuController towerMenuController;
     static public bool menuMode;
 
@@ -58,13 +58,14 @@ public class TouchSelection : MonoBehaviour
     void SelectionKindTile()
     {
       tileState = selection.GetComponent<TileState>();
-      if(tileState != null)
+      if(tileState != null && !menuMode)
             {
               if(tileState.available && towerMenuController.towerToBuild != null)
                {
                 objetive.text = "Tile Disponible";
                 menuMode = true;
                 buildTowerPopup.SetActive(true);
+                removeObstaclePopup.SetActive(false);
                }
 
               if(!tileState.available)
@@ -79,6 +80,7 @@ public class TouchSelection : MonoBehaviour
       selectedTower = selection.GetComponent<TowerController>();
       objetive.text = "Tower";
       towerMenuController.OpenUpgradeMenu();
+      towerMenuController.towerToBuild = null;
     }
     public void BuildTower()
     {
@@ -101,6 +103,8 @@ public class TouchSelection : MonoBehaviour
     {
       menuMode = true;
        removeObstaclePopup.SetActive(true);
+       buildTowerPopup.SetActive(false);
+       towerMenuController.towerToBuild = null;
     }
     public void RemoveObstacle()
     {

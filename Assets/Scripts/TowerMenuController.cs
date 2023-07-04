@@ -7,6 +7,7 @@ public class TowerMenuController : MonoBehaviour
 {
     [SerializeField] GameObject redTowerPrefab, blueTowerPrefab, greenTowerPrefab,towerMenu;
     public GameObject towerToBuild, sellMenu, upgradesMenu;
+    [SerializeField] TouchSelection touchSelection;
     void Start()
     {
         towerMenu.SetActive(false); 
@@ -25,12 +26,15 @@ public class TowerMenuController : MonoBehaviour
         towerMenu.SetActive(true);
         TouchSelection.menuMode = true;
         }
+        touchSelection.buildTowerPopup.SetActive(false);
+        touchSelection.removeObstaclePopup.SetActive(false);
     }
 
     public void OpenUpgradeMenu()
     {
         upgradesMenu.SetActive(true);
         TouchSelection.menuMode = true;
+        towerToBuild = null;
     }
 
     public void SelectRedTower()
@@ -57,5 +61,6 @@ public class TowerMenuController : MonoBehaviour
  public void OpenSellMenu()
  {
     sellMenu.SetActive(true);
+    towerToBuild = null;
  }
 }
