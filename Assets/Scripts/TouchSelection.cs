@@ -85,7 +85,7 @@ public class TouchSelection : MonoBehaviour
     public void BuildTower()
     {
      Vector3 prefabPosition = selection.transform.position;
-     prefabPosition.y += 1f; 
+     prefabPosition.y -= 0.5f; 
      Instantiate(towerMenuController.towerToBuild, prefabPosition, selection.transform.rotation);
      buildTowerPopup.SetActive(false);
       menuMode = false;
