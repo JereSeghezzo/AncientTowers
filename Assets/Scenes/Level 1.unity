@@ -14912,7 +14912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &466724474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17098,7 +17098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6e33a9885c6234187dd8e14b69b0c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonPrefab: {fileID: 8658435042609518036, guid: e4acdc93e66fdd64e980e7b50c100b95,
+  skeletonPrefab: {fileID: 8304292273078844166, guid: 87f6715b6f93d444dbb746ee43769c6e,
     type: 3}
   spawnpoint: {fileID: 528161302}
   timeBetweenWaves: 5
@@ -46875,7 +46875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1557538657
 Transform:
   m_ObjectHideFlags: 0
@@ -47058,6 +47058,7 @@ MonoBehaviour:
   - {fileID: 513071999}
   - {fileID: 1119665473}
   - {fileID: 1009590166}
+  targetIndex: 1
   movementSpeed: 4
   rotationSpeed: 5
 --- !u!4 &1558786356 stripped
@@ -61525,6 +61526,7 @@ MonoBehaviour:
   - {fileID: 513071999}
   - {fileID: 1119665473}
   - {fileID: 1009590166}
+  targetIndex: 1
   movementSpeed: 4
   rotationSpeed: 5
 --- !u!1001 &2057670024
