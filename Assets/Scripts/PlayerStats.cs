@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        moneyText.text = "50g";
+       // moneyText.text = "50g";
     }
 
 
