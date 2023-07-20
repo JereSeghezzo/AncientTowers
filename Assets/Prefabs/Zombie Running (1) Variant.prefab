@@ -132,7 +132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380f52c5c3de3034c8c298505fdb7efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   movementSpeed: 4
   rotationSpeed: 6
 --- !u!114 &5235910510763012548

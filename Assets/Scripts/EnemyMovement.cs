@@ -9,21 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public float movementSpeed = 4;
     public float rotationSpeed = 6;
 
-    //private Transform target;
-    //private int wavepointIndex = 0;
 
-    void Start()
-    {
-        //target = Waypoints.points[0];    
-     GameObject waypointParent = GameObject.Find("Waypoints");
-     if(waypointParent != null)
-     {
-        foreach(Transform child in waypointParent.transform)
-        {
-            waypoints.Add(child);
-        }
-     }
-    }
     void Update()
     {
         Movement();
@@ -51,12 +37,5 @@ public class EnemyMovement : MonoBehaviour
         var rootTarget = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Slerp(transform.rotation, rootTarget, rotationSpeed * Time.deltaTime);
     }
-
-    //void GetNextWP()
-    //{
-    //    wavepointIndex++;
-    //    target = Waypoints.points[wavepointIndex];  
-    //}
-
 
 }
