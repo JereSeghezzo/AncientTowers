@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherTowerController : MonoBehaviour
+public class MortarTowerController : MonoBehaviour
 {
+    public int towerBuildCost;
+    public GameManager gameManager;
 
     public Transform target;
     public float range = 15f;
@@ -17,7 +19,10 @@ public class ArcherTowerController : MonoBehaviour
     public float currentEnemyDistance;
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        gameManager.PlayerCoins -= towerBuildCost; 
+        gameManager.UpdateMoneyText();
     }
 
 

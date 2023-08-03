@@ -540,7 +540,7 @@ GameObject:
   - component: {fileID: 6544912984820838840}
   - component: {fileID: 4456211626585642961}
   - component: {fileID: 4421894109753223624}
-  - component: {fileID: 7537607965472004797}
+  - component: {fileID: 209494292352050188}
   m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
@@ -615,7 +615,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7537607965472004797
+--- !u!114 &209494292352050188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -624,12 +624,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896026556033278070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741e0bc63e6cb54c98ebda03d10dd2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5361dfc4e280cd1419aaa5d28811871a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerBuildCost: 150
+  gameManager: {fileID: 0}
   target: {fileID: 0}
   range: 8
-  fireRate: 1
+  fireRate: 0.5
   bulletPrefab: {fileID: 7871824266851266524, guid: 3b773c761aa094e4fa55554b7c074c99,
     type: 3}
   firePoint: {fileID: 8969023821654150746}

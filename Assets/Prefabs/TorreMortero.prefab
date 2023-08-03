@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8632933085940959861}
   - component: {fileID: 8446074612978261673}
   - component: {fileID: 1207053811467685559}
-  - component: {fileID: 861976640430734908}
+  - component: {fileID: 6231425587507769066}
   m_Layer: 8
   m_Name: Line002
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &861976640430734908
+--- !u!114 &6231425587507769066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +94,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5666937717261168709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741e0bc63e6cb54c98ebda03d10dd2b, type: 3}
+  m_Script: {fileID: 11500000, guid: e3948b4f726283a4383a2eb674972bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerBuildCost: 150
   target: {fileID: 0}
-  range: 8
-  fireRate: 1
+  range: 15
+  fireRate: 0.2
   bulletPrefab: {fileID: 7871824266851266524, guid: 3b773c761aa094e4fa55554b7c074c99,
     type: 3}
   firePoint: {fileID: 4801512133424059440}
@@ -220,7 +221,7 @@ Transform:
   m_Children:
   - {fileID: 8632933085940959861}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &542648773012173782
 BoxCollider:

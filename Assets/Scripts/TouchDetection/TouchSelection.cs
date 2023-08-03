@@ -5,6 +5,7 @@ using TMPro;
 
 public class TouchSelection : MonoBehaviour
 {
+    public GameManager gameManager;
     GameObject selection;
     TileState tileState;
     TowerController selectedTower;
@@ -84,6 +85,7 @@ public class TouchSelection : MonoBehaviour
     }
     public void BuildTower()
     {
+    
      Vector3 prefabPosition = selection.transform.position;
      prefabPosition.y -= 0.5f; 
      Instantiate(towerMenuController.towerToBuild, prefabPosition, selection.transform.rotation);
@@ -134,5 +136,7 @@ public class TouchSelection : MonoBehaviour
     towerMenuController.sellMenu.SetActive(false);
     towerMenuController.upgradesMenu.SetActive(false);
   }
+
+
     
 }

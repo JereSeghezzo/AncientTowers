@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLife: 5
+  goldDrop: 50
+  gameManager: {fileID: 0}
 --- !u!65 &3087230624588373961
 BoxCollider:
   m_ObjectHideFlags: 0
