@@ -627,8 +627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5361dfc4e280cd1419aaa5d28811871a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerBuildCost: 150
-  gameManager: {fileID: 0}
   target: {fileID: 0}
   range: 8
   fireRate: 0.5
@@ -1276,6 +1274,7 @@ GameObject:
   - component: {fileID: 7267397437301419205}
   - component: {fileID: 9195263821854652661}
   - component: {fileID: 6686497043929894636}
+  - component: {fileID: 3863552213143211259}
   m_Layer: 8
   m_Name: TorreMagica
   m_TagString: Tower
@@ -1360,6 +1359,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContactedTiles: []
+--- !u!114 &3863552213143211259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6577076659904670434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7f4c703bacdcb48bc601509944fd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  TowerType: 3
 --- !u!1 &7238512661995318880
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class TowerMenuController : MonoBehaviour
     public GameObject towerToBuild, sellMenu, upgradesMenu, notEnoghCoins;
     [SerializeField] TouchSelection touchSelection;
     public GameManager gameManager;
-    public int redTowerPrice = 150, greenTowerPrice = 150, blueTowerPrice = 150;
     void Start()
     {
         towerMenu.SetActive(false); 
@@ -42,7 +41,7 @@ public class TowerMenuController : MonoBehaviour
 
     public void SelectRedTower()
     {
-        if(gameManager.PlayerCoins > redTowerPrice) 
+        if(gameManager.playerCoins > gameManager.mortarTowerBuyValue) 
         {
       towerToBuild = redTowerPrefab; 
        towerMenu.SetActive(false);
@@ -52,7 +51,7 @@ public class TowerMenuController : MonoBehaviour
     }
     public void SelectBlueTower()
     {
-      if(gameManager.PlayerCoins > blueTowerPrice) 
+      if(gameManager.playerCoins > gameManager.cannonTowerBuyValue) 
         {
       towerToBuild = blueTowerPrefab;  
        towerMenu.SetActive(false);
@@ -62,7 +61,7 @@ public class TowerMenuController : MonoBehaviour
     }
     public void SelectGreenTower()
     {
-      if(gameManager.PlayerCoins > greenTowerPrice) 
+      if(gameManager.playerCoins > gameManager.magicTowerBuyValue) 
         {  
       towerToBuild = greenTowerPrefab;  
        towerMenu.SetActive(false);

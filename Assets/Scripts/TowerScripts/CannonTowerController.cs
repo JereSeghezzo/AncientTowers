@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CannonTowerController : MonoBehaviour
 {
-    public int towerBuildCost;
-    public GameManager gameManager;
-
     public Transform target;
     public float range = 15f;
 
@@ -19,10 +16,7 @@ public class CannonTowerController : MonoBehaviour
     public float currentEnemyDistance;
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        gameManager.PlayerCoins -= towerBuildCost; 
-        gameManager.UpdateMoneyText();
     }
 
 

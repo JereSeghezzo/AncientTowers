@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: -70738650361335411}
   - component: {fileID: 4658798230709971958}
   - component: {fileID: 4818876061342889639}
+  - component: {fileID: 7385720652364385342}
   m_Layer: 8
   m_Name: "TorreCa\xF1on"
   m_TagString: Tower
@@ -182,6 +183,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContactedTiles: []
+--- !u!114 &7385720652364385342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407334881038732388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce7f4c703bacdcb48bc601509944fd08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &4503952219403085285
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,23 +5,21 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int PlayerCoins;
+    public int playerCoins;
+    public int startPlayerGold;
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI healthText;
 
+    public int cannonTowerBuyValue, cannonTowerSellValue, archerTowerBuyValue, archerTowerSellValue, mortarTowerBuyValue, mortarTowerSellValue, magicTowerBuyValue, magicTowerSellValue;
+
     void Start()
     {
-      PlayerCoins += 200;  
+      playerCoins += startPlayerGold;  
       UpdateMoneyText();
-    }
-
-    void Update()
-    {
-        
     }
 
    public void UpdateMoneyText()
    {
-     moneyText.text = PlayerCoins.ToString() + "$";
+     moneyText.text = playerCoins.ToString() + "$";
    }
 }

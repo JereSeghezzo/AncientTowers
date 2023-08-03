@@ -124,6 +124,8 @@ public class TouchSelection : MonoBehaviour
   public void SellTower()
   {
     selection.GetComponent<TileStateUpdater>().LiberateTile();
+    gameManager.playerCoins += selection.GetComponent<TowerValueController>().sellValue;
+    gameManager.UpdateMoneyText();
     Destroy(selection);
     menuMode = false;
     towerMenuController.sellMenu.SetActive(false);

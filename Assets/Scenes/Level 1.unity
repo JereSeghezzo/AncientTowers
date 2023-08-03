@@ -4599,9 +4599,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa2d861c931a1084f9d1d9cee1419c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCoins: 0
+  playerCoins: 0
+  startPlayerGold: 200
   moneyText: {fileID: 50759065}
   healthText: {fileID: 401208095}
+  cannonTowerBuyValue: 150
+  cannonTowerSellValue: 75
+  archerTowerBuyValue: 150
+  archerTowerSellValue: 75
+  mortarTowerBuyValue: 150
+  mortarTowerSellValue: 75
+  magicTowerBuyValue: 150
+  magicTowerSellValue: 75
 --- !u!1 &206455532
 GameObject:
   m_ObjectHideFlags: 0
@@ -12297,9 +12306,6 @@ MonoBehaviour:
   notEnoghCoins: {fileID: 1375139087}
   touchSelection: {fileID: 1986714223}
   gameManager: {fileID: 202672845}
-  redTowerPrice: 150
-  greenTowerPrice: 150
-  blueTowerPrice: 150
 --- !u!114 &466724475
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e741e0bc63e6cb54c98ebda03d10dd2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerBuildCost: 0
+  gameManager: {fileID: 0}
   target: {fileID: 0}
   range: 8
   fireRate: 1

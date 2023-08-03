@@ -27,7 +27,7 @@ public class EnemyStats : MonoBehaviour
     enemyLife -= damage;
     if(enemyLife <= 0)
     {
-        gameManager.PlayerCoins += goldDrop;
+        gameManager.playerCoins += goldDrop;
         gameManager.UpdateMoneyText();
         Destroy(gameObject); 
     }
