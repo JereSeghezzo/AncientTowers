@@ -7,6 +7,11 @@ public class TowerMain : MonoBehaviour
 {
     public int towerHealth = 10;
     public GameManager gameManager;
+
+    void Start()
+    {
+      UpdateHealthText();
+    }
    
     void OnTriggerEnter(Collider col)
     {

@@ -6,10 +6,10 @@ using TMPro;
 public class TouchSelection : MonoBehaviour
 {
     public GameManager gameManager;
-    GameObject selection;
+    public GameObject selection;
     TileState tileState;
     TowerController selectedTower;
-    public TMP_Text objetive;
+    public TMP_Text objetive, removeObstacleCost;
     [SerializeField] LayerMask whatToDetect;
     public GameObject buildTowerPopup, removeObstaclePopup;
     [SerializeField] TowerMenuController towerMenuController;
@@ -104,16 +104,22 @@ public class TouchSelection : MonoBehaviour
     void ObstacleSelection()
     {
       menuMode = true;
+      removeObstacleCost.text = "Quieres eliminar este obstaculo por "+ selection.GetComponent<ObstacleValueController>().RemoveCost.ToString() +" de oro?";
        removeObstaclePopup.SetActive(true);
        buildTowerPopup.SetActive(false);
        towerMenuController.towerToBuild = null;
     }
     public void RemoveObstacle()
     {
+      if(gameManager.playerCoins > selection.GetComponent<ObstacleValueController>().RemoveCost)
+      {
     selection.GetComponent<TileStateUpdater>().LiberateTile();
+    gameManager.playerCoins -= selection.GetComponent<ObstacleValueController>().RemoveCost;
+    gameManager.UpdateMoneyText();
      Destroy(selection);
      menuMode = false;
        removeObstaclePopup.SetActive(false);
+      } else towerMenuController.NotEnoghCoinsAlert(); CancelRemoveObstacle();
     }
       public void CancelRemoveObstacle()
     {
@@ -130,7 +136,7 @@ public class TouchSelection : MonoBehaviour
     menuMode = false;
     towerMenuController.sellMenu.SetActive(false);
     towerMenuController.upgradesMenu.SetActive(false);
-  }
+  } 
 
   public void CancelSellTower()
   {

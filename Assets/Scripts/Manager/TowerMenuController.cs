@@ -9,6 +9,7 @@ public class TowerMenuController : MonoBehaviour
     public GameObject towerToBuild, sellMenu, upgradesMenu, notEnoghCoins;
     [SerializeField] TouchSelection touchSelection;
     public GameManager gameManager;
+    public TMP_Text sellTowerValue;
     void Start()
     {
         towerMenu.SetActive(false); 
@@ -71,11 +72,12 @@ public class TowerMenuController : MonoBehaviour
     }
  public void OpenSellMenu()
  {
+    sellTowerValue.text = "Quieres vender esta torre por "+ touchSelection.selection.GetComponent<TowerValueController>().sellValue.ToString() +" de oro?";  
     sellMenu.SetActive(true);
     towerToBuild = null;
  }
 
- void NotEnoghCoinsAlert()
+ public void NotEnoghCoinsAlert()
  {
    notEnoghCoins.SetActive(true); 
  }

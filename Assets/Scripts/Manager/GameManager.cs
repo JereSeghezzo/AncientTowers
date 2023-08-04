@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public int cannonTowerBuyValue, cannonTowerSellValue, archerTowerBuyValue, archerTowerSellValue, mortarTowerBuyValue, mortarTowerSellValue, magicTowerBuyValue, magicTowerSellValue;
 
+    public int treeRemoveCost, bigTreeRemoveCost, rockRemoveCost, bigRockRemoveCost;
     void Start()
     {
       playerCoins += startPlayerGold;  
