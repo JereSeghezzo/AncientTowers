@@ -182,9 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c5f4c15efa33040a329d362f3a56b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLife: 5
-  goldDrop: 50
+  enemyHealth: 5
+  goldDrop: 0
   gameManager: {fileID: 0}
+  enemieType: 0
 --- !u!65 &3087230624588373961
 BoxCollider:
   m_ObjectHideFlags: 0

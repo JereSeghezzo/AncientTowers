@@ -5,23 +5,23 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public Transform skeletonPrefab;
-
     public Transform spawnpoint;
-
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
+    public int waveNumber = 0;
+    public GameManager gameManager;
 
-    private int waveNumber = 0;
+
 
     void Update()
     {
-        if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
+        // if (countdown <= 0f)
+        // {
+        //     StartCoroutine(SpawnWave());
+        //     countdown = timeBetweenWaves;
+        // }
 
-        countdown -= Time.deltaTime;
+        // countdown -= Time.deltaTime;
 
     }
 
@@ -33,6 +33,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        gameManager.amountOfEnemies = waveNumber;
 
         for (int i = 0; i < waveNumber; i++)
         {
@@ -41,4 +42,11 @@ public class WaveSpawner : MonoBehaviour
         }
 
     }
+
+    public void StartNextWave()
+    {
+        gameManager.ToggleNextWaveButton();
+        StartCoroutine(SpawnWave());
+    }
+
 }
