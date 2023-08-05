@@ -77,7 +77,7 @@ public class MagicTowerController : MonoBehaviour
     void Shoot()
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        CannonBullet bullet = bulletGo.GetComponent<CannonBullet>();
 
         if (bullet != null)
             bullet.Seek(target);

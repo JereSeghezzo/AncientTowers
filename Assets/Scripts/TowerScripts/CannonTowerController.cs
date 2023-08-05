@@ -14,6 +14,9 @@ public class CannonTowerController : MonoBehaviour
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
+
+     public float rotationSpeed = 5.0f;
+     public GameObject cannon;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -32,7 +35,6 @@ public class CannonTowerController : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
-
     }
 
     void UpdateTarget()
@@ -76,8 +78,9 @@ public class CannonTowerController : MonoBehaviour
 
     void Shoot()
     {
+        LookAtTarget();
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        CannonBullet bullet = bulletGo.GetComponent<CannonBullet>();
 
         if (bullet != null)
             bullet.Seek(target);
@@ -88,5 +91,11 @@ public class CannonTowerController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    void LookAtTarget()
+    {
+        Vector3 targetPosition = new Vector3(target.transform.position.x, 90f, target.transform.position.z);
+        cannon.transform.LookAt(targetPosition);  
     }
 }

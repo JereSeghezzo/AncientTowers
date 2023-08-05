@@ -11,6 +11,7 @@ public class MortarTowerController : MonoBehaviour
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
+    public GameObject splashZonePrefab;
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
@@ -76,11 +77,13 @@ public class MortarTowerController : MonoBehaviour
 
     void Shoot()
     {
+        //Debug.Log("Disparo");
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        GameObject zoneGo = (GameObject)Instantiate(splashZonePrefab, target.transform.position, Quaternion.identity);
+        MortarBullet bullet = bulletGo.GetComponent<MortarBullet>();
 
         if (bullet != null)
-            bullet.Seek(target);
+            bullet.Seek(zoneGo.GetComponent<Transform>());
     }
 
 

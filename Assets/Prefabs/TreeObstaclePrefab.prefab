@@ -138,8 +138,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35945475, y: 0.26097855, z: 0.55172205}
-  m_Center: {x: -0.0022599362, y: -0.0010631903, z: 0.26435816}
+  m_Size: {x: 0.7, y: 0.7, z: 0.7}
+  m_Center: {x: -0.024602026, y: -0.054456916, z: 0.26435816}
 --- !u!54 &6347338998705275939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192,3 +192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a32298e40a841643b2c5ba2ebed914a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  obstacleType: 0
+  RemoveCost: 0

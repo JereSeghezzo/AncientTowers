@@ -77,7 +77,7 @@ public class ArcherTowerController : MonoBehaviour
     void Shoot()
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        ArcherArrow bullet = bulletGo.GetComponent<ArcherArrow>();
 
         if (bullet != null)
             bullet.Seek(target);

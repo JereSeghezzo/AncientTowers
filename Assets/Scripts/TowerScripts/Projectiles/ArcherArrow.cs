@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class ArcherArrow : MonoBehaviour
 {
     private Transform target;
 
-    public float speed = 70f;
+    public float speed;
+    public int damage;
     public void Seek (Transform _target)
     {
         target = _target;
+
+        Vector3 targetPosition = new Vector3(target.transform.position.x, 90f, target.transform.position.z);
+        transform.LookAt(targetPosition);  
     }
     void Update()
     {
@@ -24,7 +28,7 @@ public class Bullet : MonoBehaviour
 
         if (dir.magnitude <= distanceThisFrame)
         {
-            target.gameObject.GetComponent<EnemyStats>().TakeDamage(1);
+            target.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
             HitTarget();
             return;
         }

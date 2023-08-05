@@ -126,13 +126,13 @@ Transform:
   m_GameObject: {fileID: 461962568432301796}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -20.165478, y: 0.090001106, z: 22.55804}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5737493773968930803}
   - {fileID: 1245490063106899988}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &1033434596631860283
 Animator:
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  movementSpeed: 4
+  movementSpeed: 3
   rotationSpeed: 6
 --- !u!114 &2394245714951055906
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c5f4c15efa33040a329d362f3a56b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 5
+  enemyHealth: 100
   goldDrop: 0
   gameManager: {fileID: 0}
   enemieType: 0

@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public int treeRemoveCost, bigTreeRemoveCost, rockRemoveCost, bigRockRemoveCost;
     public int skeletonGoldDrop, enemie2GoldDrop, enemie3GoldDrop, enemie4GoldDrop;
 
-    public bool isWaveActive;
     public int amountOfEnemies;
     public int killedEnemies;
     void Start()
@@ -38,7 +37,7 @@ public class GameManager : MonoBehaviour
 
    void CheckWaveStatus()
    {
-    if(killedEnemies >= amountOfEnemies)
+    if(killedEnemies == amountOfEnemies)
     {
      ToggleNextWaveButton();
      killedEnemies = 0;

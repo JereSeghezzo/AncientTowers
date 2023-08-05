@@ -6,24 +6,10 @@ public class WaveSpawner : MonoBehaviour
 {
     public Transform skeletonPrefab;
     public Transform spawnpoint;
-    public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
     public int waveNumber = 0;
     public GameManager gameManager;
-
-
-
-    void Update()
-    {
-        // if (countdown <= 0f)
-        // {
-        //     StartCoroutine(SpawnWave());
-        //     countdown = timeBetweenWaves;
-        // }
-
-        // countdown -= Time.deltaTime;
-
-    }
+    public int skeletonAmount,enemy2Amount, enemy3Amount, enemy4Amount, enemy5Amount;
+    public int enemyToSpawn;
 
     void SpawnEnemy()
     {
@@ -47,6 +33,38 @@ public class WaveSpawner : MonoBehaviour
     {
         gameManager.ToggleNextWaveButton();
         StartCoroutine(SpawnWave());
+    }
+
+    public void SelectWaveEnemies()
+    {
+      ClearEnemies();
+      if(waveNumber == 1)  
+      {
+        skeletonAmount = 1;
+      }
+      if(waveNumber == 2)
+      {
+        skeletonAmount = 2;
+      }
+      if(waveNumber == 3)
+      {
+        skeletonAmount = 4;
+      }
+    }
+
+    public void ClearEnemies()
+    {
+      skeletonAmount = 0;  
+      enemy2Amount = 0; 
+      enemy3Amount = 0; 
+      enemy4Amount = 0; 
+      enemy5Amount = 0; 
+      
+    }
+
+    public void Spawn()
+    {
+        
     }
 
 }
