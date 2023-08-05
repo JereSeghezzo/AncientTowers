@@ -21,8 +21,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (col.gameObject.tag == "MainTower")
         {
-            gameManager.EnemyKilled();
-            Destroy(gameObject);
+          EnemyDeath();
         }
     }
 
@@ -31,10 +30,8 @@ public class EnemyStats : MonoBehaviour
     enemyHealth -= damage;
     if(enemyHealth <= 0)
     {
-        gameManager.playerCoins += goldDrop;
-        gameManager.UpdateMoneyText();
-        gameManager.EnemyKilled();
-        Destroy(gameObject); 
+        GoldDrop();
+        EnemyDeath();
     }
    }
 
@@ -44,5 +41,17 @@ public class EnemyStats : MonoBehaviour
      if(enemieType == DataType.Enemie2) goldDrop = gameManager.enemie2GoldDrop;
      if(enemieType == DataType.Enemie3) goldDrop = gameManager.enemie3GoldDrop; 
      if(enemieType == DataType.Enemie4) goldDrop = gameManager.enemie4GoldDrop;
+    }
+
+    void EnemyDeath()
+    {
+      gameManager.EnemyKilled();  
+      Destroy(gameObject);   
+    }
+
+    void GoldDrop()
+    {
+       gameManager.playerCoins += goldDrop;
+       gameManager.UpdateMoneyText();  
     }
 }

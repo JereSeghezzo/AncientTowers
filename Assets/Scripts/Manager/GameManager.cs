@@ -41,12 +41,15 @@ public class GameManager : MonoBehaviour
     {
      ToggleNextWaveButton();
      killedEnemies = 0;
+     amountOfEnemies = 0;
+     Debug.Log("Listo");
     }
    }
 
    public void EnemyKilled()
    {
     killedEnemies++;
+    Debug.Log(killedEnemies);
      CheckWaveStatus();
    }
 

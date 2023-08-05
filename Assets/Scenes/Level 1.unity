@@ -495,6 +495,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5630002}
   m_CullTransparentMesh: 1
+--- !u!1 &11082789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11082790}
+  - component: {fileID: 11082793}
+  - component: {fileID: 11082792}
+  - component: {fileID: 11082791}
+  m_Layer: 5
+  m_Name: MagicTowerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!224 &11082790
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11082789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1277940899}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -759, y: 0.000028005}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &11082791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11082789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 11082792}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 466724474}
+        m_TargetAssemblyTypeName: TowerMenuController, Assembly-CSharp
+        m_MethodName: SelectMagicTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &11082792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11082789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.74871826, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &11082793
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11082789}
+  m_CullTransparentMesh: 1
 --- !u!1001 &11459972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3091,7 +3224,7 @@ GameObject:
   - component: {fileID: 164999059}
   - component: {fileID: 164999058}
   m_Layer: 5
-  m_Name: RedTowerButton
+  m_Name: MortarTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3114,8 +3247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 383.4679, y: 383.4679}
+  m_AnchoredPosition: {x: -208, y: 0.000038495}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164999058
 MonoBehaviour:
@@ -3163,7 +3296,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466724474}
         m_TargetAssemblyTypeName: TowerMenuController, Assembly-CSharp
-        m_MethodName: SelectRedTower
+        m_MethodName: SelectMortarTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3510,8 +3643,8 @@ MonoBehaviour:
   rockRemoveCost: 100
   bigRockRemoveCost: 200
   skeletonGoldDrop: 50
-  enemie2GoldDrop: 50
-  enemie3GoldDrop: 50
+  enemie2GoldDrop: 150
+  enemie3GoldDrop: 300
   enemie4GoldDrop: 50
   amountOfEnemies: 0
   killedEnemies: 0
@@ -8597,7 +8730,7 @@ GameObject:
   - component: {fileID: 466220257}
   - component: {fileID: 466220256}
   m_Layer: 5
-  m_Name: GreenTowerButton
+  m_Name: ArcherTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8620,8 +8753,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 370, y: 0}
-  m_SizeDelta: {x: 383.4679, y: 383.4679}
+  m_AnchoredPosition: {x: 357, y: 0.000028005}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466220256
 MonoBehaviour:
@@ -8669,7 +8802,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466724474}
         m_TargetAssemblyTypeName: TowerMenuController, Assembly-CSharp
-        m_MethodName: SelectGreenTower
+        m_MethodName: SelectArcherTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8749,11 +8882,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb68645d42dc394b886268a13f5d4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redTowerPrefab: {fileID: 6643112690127513894, guid: 3b0b8ce6e35beb04e9913399d9861e27,
+  mortarTowerPrefab: {fileID: 6643112690127513894, guid: 3b0b8ce6e35beb04e9913399d9861e27,
     type: 3}
-  blueTowerPrefab: {fileID: 939388628230316825, guid: a1be1218bc6e8f54ba4e947279e8a310,
+  cannonTowerPrefab: {fileID: 939388628230316825, guid: a1be1218bc6e8f54ba4e947279e8a310,
     type: 3}
-  greenTowerPrefab: {fileID: 1298526807358646951, guid: bbfb298bf6d25cf46ac87cf4bb1a08e8,
+  archerTowerPrefab: {fileID: 1298526807358646951, guid: bbfb298bf6d25cf46ac87cf4bb1a08e8,
+    type: 3}
+  magicTowerPrefab: {fileID: 6577076659904670434, guid: 22be16de646aced4ea45c712173db107,
     type: 3}
   towerMenu: {fileID: 1277940896}
   towerToBuild: {fileID: 0}
@@ -9904,9 +10039,28 @@ MonoBehaviour:
   skeletonPrefab: {fileID: 8304292273078844166, guid: 87f6715b6f93d444dbb746ee43769c6e,
     type: 3}
   spawnpoint: {fileID: 528161302}
-  timeBetweenWaves: 10
   waveNumber: 0
   gameManager: {fileID: 202672845}
+  skeletonAmount: 0
+  enemy2Amount: 0
+  enemy3Amount: 0
+  enemy4Amount: 0
+  enemy5Amount: 0
+  enemyToSpawn: 0
+  enemies:
+  - enemyPrefab: {fileID: 351100940504630250, guid: 87f6715b6f93d444dbb746ee43769c6e,
+      type: 3}
+    cost: 1
+  - enemyPrefab: {fileID: 6971906798213300317, guid: dae78dd08379987448d36313554ead4f,
+      type: 3}
+    cost: 3
+  - enemyPrefab: {fileID: 8645622794481440174, guid: 9d9a35404f1d5d54a873284d341f2022,
+      type: 3}
+    cost: 5
+  currWave: 0
+  enemiesToSpawn: []
+  spawnLocation: {fileID: 528161302}
+  waveDuration: 1
 --- !u!65 &528161299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12396,7 +12550,7 @@ GameObject:
   - component: {fileID: 698867250}
   - component: {fileID: 698867249}
   m_Layer: 5
-  m_Name: BlueTowerButton
+  m_Name: CannonTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12419,8 +12573,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -370, y: 0}
-  m_SizeDelta: {x: 383.46777, y: 383.4679}
+  m_AnchoredPosition: {x: -285, y: 0}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698867249
 MonoBehaviour:
@@ -12468,7 +12622,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 466724474}
         m_TargetAssemblyTypeName: TowerMenuController, Assembly-CSharp
-        m_MethodName: SelectBlueTower
+        m_MethodName: SelectCannonTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21571,6 +21725,7 @@ RectTransform:
   - {fileID: 466220255}
   - {fileID: 164999057}
   - {fileID: 698867248}
+  - {fileID: 11082790}
   - {fileID: 1650266240}
   m_Father: {fileID: 466724478}
   m_RootOrder: -1
@@ -25579,7 +25734,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 528161298}
         m_TargetAssemblyTypeName: WaveSpawner, Assembly-CSharp
-        m_MethodName: StartNextWave
+        m_MethodName: GenerateWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

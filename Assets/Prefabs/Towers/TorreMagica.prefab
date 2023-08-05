@@ -628,9 +628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 8
-  fireRate: 0.5
-  bulletPrefab: {fileID: 7871824266851266524, guid: 3b773c761aa094e4fa55554b7c074c99,
+  range: 6
+  fireRate: 0.1
+  bulletPrefab: {fileID: 1451275921700315814, guid: 3b773c761aa094e4fa55554b7c074c99,
     type: 3}
   firePoint: {fileID: 8969023821654150746}
   currentEnemyDistance: 0
@@ -1373,6 +1373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   TowerType: 3
+  buyValue: 0
+  sellValue: 0
 --- !u!1 &7238512661995318880
 GameObject:
   m_ObjectHideFlags: 0

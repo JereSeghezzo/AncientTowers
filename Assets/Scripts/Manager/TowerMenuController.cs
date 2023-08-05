@@ -5,10 +5,17 @@ using TMPro;
 
 public class TowerMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject redTowerPrefab, blueTowerPrefab, greenTowerPrefab,towerMenu;
+  [Header("Tower Prefabs")]
+    [SerializeField] GameObject mortarTowerPrefab;
+    [SerializeField] GameObject cannonTowerPrefab;
+    [SerializeField] GameObject archerTowerPrefab;
+    [SerializeField] GameObject magicTowerPrefab;
+     [Header("Scripts")]
+    [SerializeField] GameObject towerMenu;
     public GameObject towerToBuild, sellMenu, upgradesMenu, notEnoghCoins;
     [SerializeField] TouchSelection touchSelection;
     public GameManager gameManager;
+     [Header("Tower Price Text")]
     public TMP_Text sellTowerValue;
     void Start()
     {
@@ -40,31 +47,41 @@ public class TowerMenuController : MonoBehaviour
         towerToBuild = null;
     }
 
-    public void SelectRedTower()
+    public void SelectMortarTower()
     {
         if(gameManager.playerCoins > gameManager.mortarTowerBuyValue) 
         {
-      towerToBuild = redTowerPrefab; 
+      towerToBuild = mortarTowerPrefab; 
        towerMenu.SetActive(false);
         upgradesMenu.SetActive(false);
         TouchSelection.menuMode = false; 
         }else NotEnoghCoinsAlert();
     }
-    public void SelectBlueTower()
+    public void SelectCannonTower()
     {
       if(gameManager.playerCoins > gameManager.cannonTowerBuyValue) 
         {
-      towerToBuild = blueTowerPrefab;  
+      towerToBuild = cannonTowerPrefab;  
        towerMenu.SetActive(false);
         upgradesMenu.SetActive(false);
         TouchSelection.menuMode = false;
         } else NotEnoghCoinsAlert();
     }
-    public void SelectGreenTower()
+    public void SelectArcherTower()
+    {
+      if(gameManager.playerCoins > gameManager.archerTowerBuyValue) 
+        {  
+      towerToBuild = archerTowerPrefab;  
+       towerMenu.SetActive(false);
+        upgradesMenu.SetActive(false);
+        TouchSelection.menuMode = false;
+        } else NotEnoghCoinsAlert();
+    }
+    public void SelectMagicTower()
     {
       if(gameManager.playerCoins > gameManager.magicTowerBuyValue) 
         {  
-      towerToBuild = greenTowerPrefab;  
+      towerToBuild = magicTowerPrefab;  
        towerMenu.SetActive(false);
         upgradesMenu.SetActive(false);
         TouchSelection.menuMode = false;
