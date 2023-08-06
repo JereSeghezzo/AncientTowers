@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI healthText;
     public GameObject nextWaveButton;
+    public int goldForWave;
 
     [Header("Tower Prices")]
     public int cannonTowerBuyValue;
@@ -38,9 +39,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Enemies Drops")]
     public int skeletonGoldDrop;
-    public int enemie2GoldDrop;
-    public int enemie3GoldDrop;
-    public int enemie4GoldDrop;
+    public int blackSkeletonGoldDrop;
+    public int vampireGoldDrop;
+    public int golemGoldDrop;
 
     [HideInInspector]
     public int amountOfEnemies;
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
    {
     if(amountOfEnemies <= 0)
     {
+     GoldForSurvival(); 
      ToggleNextWaveButton();
      Debug.Log("Oleada Terminada");
      if(wavesToWin <= currentWave)
@@ -104,6 +106,11 @@ public class GameManager : MonoBehaviour
       GameWon();
      }
     }
+   }
+
+   void GoldForSurvival()
+   {
+     playerCoins += goldForWave;
    }
 
    void UpdateTowerSellPrices()

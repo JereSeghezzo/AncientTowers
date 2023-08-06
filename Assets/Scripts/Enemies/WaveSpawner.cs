@@ -9,7 +9,9 @@ public class WaveSpawner : MonoBehaviour
 
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
-    int waveValue;
+    public int waveCounter;
+    public int waveMultiplier;
+    public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
     
     public Transform spawnLocation;
@@ -42,9 +44,10 @@ public class WaveSpawner : MonoBehaviour
     public void GenerateWave()
     {
       gameManager.DeactivateNextWaveButton();
-      currWave++;
-      waveValue = currWave;
-      gameManager.currentWave = currWave;
+      waveCounter++;
+      currWave = currWave * waveMultiplier;
+      waveValue = (int)currWave;
+      gameManager.currentWave = waveCounter;
       GenerateEnemies();
 
       spawnInterval = waveDuration / enemiesToSpawn.Count;
