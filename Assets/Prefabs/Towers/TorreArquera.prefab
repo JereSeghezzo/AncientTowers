@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  range: 16
+  range: 12
   fireRate: 1.3
   bulletPrefab: {fileID: 1451275921700315814, guid: 5eccebb509a6fca408cf844852d4d6b7,
     type: 3}
@@ -169,7 +169,7 @@ Transform:
   - {fileID: 2734565068176252576}
   - {fileID: 6709249277851690259}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1861852133702936344
 BoxCollider:

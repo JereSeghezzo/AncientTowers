@@ -140,9 +140,9 @@ public class TouchSelection : MonoBehaviour
 
   public void CancelSellTower()
   {
-    menuMode = false;
+    //menuMode = false;
     towerMenuController.sellMenu.SetActive(false);
-    towerMenuController.upgradesMenu.SetActive(false);
+    //towerMenuController.upgradesMenu.SetActive(false);
   }
 
 

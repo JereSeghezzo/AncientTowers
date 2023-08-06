@@ -41,7 +41,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void GenerateWave()
     {
-      gameManager.ToggleNextWaveButton();
+      gameManager.DeactivateNextWaveButton();
       currWave++;
       waveValue = currWave;
       GenerateEnemies();

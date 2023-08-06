@@ -65,7 +65,18 @@ public class GameManager : MonoBehaviour
 
    public void ToggleNextWaveButton()
    {
-    nextWaveButton.SetActive(!nextWaveButton.activeSelf);
+    if(amountOfEnemies > 0)
+    {
+    nextWaveButton.SetActive(false);
+    }
+    else
+    {
+      nextWaveButton.SetActive(true);
+    }
+   }
+   public void DeactivateNextWaveButton()
+   {
+    nextWaveButton.SetActive(false);
    }
    public void EnemyKilled()
    {
