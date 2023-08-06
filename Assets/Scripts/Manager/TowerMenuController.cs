@@ -49,7 +49,7 @@ public class TowerMenuController : MonoBehaviour
 
     public void SelectMortarTower()
     {
-        if(gameManager.playerCoins > gameManager.mortarTowerBuyValue) 
+        if(gameManager.playerCoins >= gameManager.mortarTowerBuyValue) 
         {
       towerToBuild = mortarTowerPrefab; 
        towerMenu.SetActive(false);
@@ -59,7 +59,7 @@ public class TowerMenuController : MonoBehaviour
     }
     public void SelectCannonTower()
     {
-      if(gameManager.playerCoins > gameManager.cannonTowerBuyValue) 
+      if(gameManager.playerCoins >= gameManager.cannonTowerBuyValue) 
         {
       towerToBuild = cannonTowerPrefab;  
        towerMenu.SetActive(false);
@@ -69,7 +69,7 @@ public class TowerMenuController : MonoBehaviour
     }
     public void SelectArcherTower()
     {
-      if(gameManager.playerCoins > gameManager.archerTowerBuyValue) 
+      if(gameManager.playerCoins >= gameManager.archerTowerBuyValue) 
         {  
       towerToBuild = archerTowerPrefab;  
        towerMenu.SetActive(false);
@@ -79,7 +79,7 @@ public class TowerMenuController : MonoBehaviour
     }
     public void SelectMagicTower()
     {
-      if(gameManager.playerCoins > gameManager.magicTowerBuyValue) 
+      if(gameManager.playerCoins >= gameManager.magicTowerBuyValue) 
         {  
       towerToBuild = magicTowerPrefab;  
        towerMenu.SetActive(false);

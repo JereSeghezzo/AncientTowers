@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform skeletonPrefab;
     public Transform spawnpoint;
-    public int waveNumber = 0;
     public GameManager gameManager;
-    public int skeletonAmount,enemy2Amount, enemy3Amount, enemy4Amount, enemy5Amount;
-    public int enemyToSpawn;
 
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
@@ -22,29 +18,6 @@ public class WaveSpawner : MonoBehaviour
     float spawnInterval;
     float spawnTimer;
 
-    void SpawnEnemy()
-    {
-        Instantiate(skeletonPrefab, spawnpoint.position, spawnpoint.rotation);
-    }
-
-    IEnumerator SpawnWave()
-    {
-        waveNumber++;
-        gameManager.amountOfEnemies = waveNumber;
-
-        for (int i = 0; i < waveNumber; i++)
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.5f);
-        }
-
-    }
-
-    public void StartNextWave()
-    {
-        StartCoroutine(SpawnWave());
-    }
-
     void FixedUpdate()
     {
       if(spawnTimer <= 0)
@@ -54,7 +27,6 @@ public class WaveSpawner : MonoBehaviour
           Instantiate(enemiesToSpawn[0], spawnLocation.position, Quaternion.identity);
           enemiesToSpawn.RemoveAt(0);
           spawnTimer = spawnInterval;
-          //Debug.Log(spawnInterval);
         }
         else
         {
@@ -69,8 +41,6 @@ public class WaveSpawner : MonoBehaviour
 
     public void GenerateWave()
     {
-      gameManager.killedEnemies = 0;
-      gameManager.amountOfEnemies = 0;
       gameManager.ToggleNextWaveButton();
       currWave++;
       waveValue = currWave;
@@ -79,8 +49,7 @@ public class WaveSpawner : MonoBehaviour
       spawnInterval = waveDuration / enemiesToSpawn.Count;
       waveTimer = waveDuration;
 
-      gameManager.amountOfEnemies = enemiesToSpawn.Count;
-      Debug.Log("Cantidad de enemigos " + gameManager.amountOfEnemies);
+      Debug.Log("Cantidad de enemigos " + enemiesToSpawn.Count);
     }
 
     public void GenerateEnemies()
@@ -101,7 +70,6 @@ public class WaveSpawner : MonoBehaviour
           break;
         }
       }
-         // gameManager.ToggleNextWaveButton();
       enemiesToSpawn.Clear();
       enemiesToSpawn = generatedEnemies;
     }

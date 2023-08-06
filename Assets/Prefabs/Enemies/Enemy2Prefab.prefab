@@ -950,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  movementSpeed: 5
+  movementSpeed: 3
   rotationSpeed: 6
 --- !u!114 &2086931199962244822
 MonoBehaviour:

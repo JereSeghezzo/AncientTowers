@@ -15,6 +15,12 @@ public class EnemyStats : MonoBehaviour
     {
       gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
       SelectValues();
+      gameManager.amountOfEnemies++;
+    }
+
+    void OnDisable()
+    {
+     gameManager.amountOfEnemies--;
     }
 
     void OnTriggerEnter(Collider col)
@@ -45,7 +51,7 @@ public class EnemyStats : MonoBehaviour
 
     void EnemyDeath()
     {
-      gameManager.EnemyKilled();  
+      gameManager.Invoke("EnemyKilled", 1.0f);
       Destroy(gameObject);   
     }
 

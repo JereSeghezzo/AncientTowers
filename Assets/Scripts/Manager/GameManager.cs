@@ -11,18 +11,51 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public GameObject nextWaveButton;
 
+    [Header("Tower Prices")]
+    public int cannonTowerBuyValue;
+    public int archerTowerBuyValue;
+    public int mortarTowerBuyValue;
+    public int magicTowerBuyValue;
 
-    public int cannonTowerBuyValue, cannonTowerSellValue, archerTowerBuyValue, archerTowerSellValue, mortarTowerBuyValue, mortarTowerSellValue, magicTowerBuyValue, magicTowerSellValue;
+    [HideInInspector]
+    int cannonOriginalPrice, archerOriginalPrice, mortarOriginalPrice, magicOriginalPrice;
 
-    public int treeRemoveCost, bigTreeRemoveCost, rockRemoveCost, bigRockRemoveCost;
-    public int skeletonGoldDrop, enemie2GoldDrop, enemie3GoldDrop, enemie4GoldDrop;
+    [Header("Multipliers")]
 
+    public float towerSellPricePercent;
+    public float towerInflation;
+    
+    [HideInInspector]
+    public int cannonTowerSellValue, archerTowerSellValue,mortarTowerSellValue,magicTowerSellValue;
+
+    [Header("Obstacles Costs")]
+    public int treeRemoveCost;
+    public int bigTreeRemoveCost;
+    public int rockRemoveCost;
+    public int bigRockRemoveCost;
+
+    [Header("Enemies Drops")]
+    public int skeletonGoldDrop;
+    public int enemie2GoldDrop;
+    public int enemie3GoldDrop;
+    public int enemie4GoldDrop;
+
+    //[HideInInspector]
     public int amountOfEnemies;
-    public int killedEnemies;
+
+    [Header("Amount of Towers active")]
+    public int archerTowers;
+    public int cannonTowers;
+    public int mortarTowers;
+    public int magicTowers;
+
+
     void Start()
     {
-      playerCoins += startPlayerGold;  
+      playerCoins = startPlayerGold;  
       UpdateMoneyText();
+      UpdateTowerSellPrices();
+      SetOriginalPrices();
     }
 
    public void UpdateMoneyText()
@@ -34,24 +67,45 @@ public class GameManager : MonoBehaviour
    {
     nextWaveButton.SetActive(!nextWaveButton.activeSelf);
    }
-
-   void CheckWaveStatus()
+   public void EnemyKilled()
    {
-    if(killedEnemies == amountOfEnemies)
+    if(amountOfEnemies <= 0)
     {
      ToggleNextWaveButton();
-     killedEnemies = 0;
-     amountOfEnemies = 0;
      Debug.Log("Listo");
     }
    }
 
-   public void EnemyKilled()
+   void UpdateTowerSellPrices()
    {
-    killedEnemies++;
-    Debug.Log(killedEnemies);
-     CheckWaveStatus();
+    cannonTowerSellValue = (int)(cannonTowerBuyValue * towerSellPricePercent);
+    archerTowerSellValue = (int)(archerTowerBuyValue * towerSellPricePercent);
+    mortarTowerSellValue = (int)(mortarTowerBuyValue * towerSellPricePercent);
+    magicTowerSellValue = (int)(magicTowerBuyValue * towerSellPricePercent);
    }
+
+   void SetOriginalPrices()
+   {
+    cannonOriginalPrice = cannonTowerBuyValue;
+    archerOriginalPrice = archerTowerBuyValue;
+    mortarOriginalPrice = mortarTowerBuyValue;
+    magicOriginalPrice = magicTowerBuyValue;
+   }
+
+   void UpdateTowerPricesByInflation()
+   {
+     cannonTowerBuyValue = (int)(cannonOriginalPrice + cannonOriginalPrice * (cannonTowers * towerInflation));
+     archerTowerBuyValue = (int)(archerOriginalPrice + archerOriginalPrice * (archerTowers * towerInflation));
+     mortarTowerBuyValue = (int)(mortarOriginalPrice + mortarOriginalPrice * (mortarTowers * towerInflation));
+     magicTowerBuyValue = (int)(magicOriginalPrice + magicOriginalPrice * (magicTowers * towerInflation));
+   }
+
+   public void UpdateTowerPrices()
+   {
+    UpdateTowerPricesByInflation();
+    UpdateTowerSellPrices();
+   }
+
 
   
 }
