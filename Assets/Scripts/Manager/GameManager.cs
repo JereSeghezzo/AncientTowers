@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     public int enemie3GoldDrop;
     public int enemie4GoldDrop;
 
-    //[HideInInspector]
+    [HideInInspector]
     public int amountOfEnemies;
 
     [Header("Amount of Towers active")]
@@ -49,6 +50,17 @@ public class GameManager : MonoBehaviour
     public int mortarTowers;
     public int magicTowers;
 
+ [Header("Game Over")]
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
+    public TowerMain mainTower;
+
+    public int wavesToWin;
+    public int currentWave;
+
+    public TextMeshProUGUI waveCounter;
+
 
     void Start()
     {
@@ -56,6 +68,7 @@ public class GameManager : MonoBehaviour
       UpdateMoneyText();
       UpdateTowerSellPrices();
       SetOriginalPrices();
+      UpdateWaveCounter();
     }
 
    public void UpdateMoneyText()
@@ -65,6 +78,7 @@ public class GameManager : MonoBehaviour
 
    public void ToggleNextWaveButton()
    {
+    UpdateWaveCounter();
     if(amountOfEnemies > 0)
     {
     nextWaveButton.SetActive(false);
@@ -83,7 +97,11 @@ public class GameManager : MonoBehaviour
     if(amountOfEnemies <= 0)
     {
      ToggleNextWaveButton();
-     Debug.Log("Listo");
+     Debug.Log("Oleada Terminada");
+     if(wavesToWin <= currentWave)
+     {
+      GameWon();
+     }
     }
    }
 
@@ -115,6 +133,23 @@ public class GameManager : MonoBehaviour
    {
     UpdateTowerPricesByInflation();
     UpdateTowerSellPrices();
+   }
+
+   public void GameLost()
+   {
+    loseScreen.SetActive(true);
+    Time.timeScale = 0f;
+   }
+
+    public void GameWon()
+   {
+    winScreen.SetActive(true);
+    Time.timeScale = 0f;
+   }
+
+   void UpdateWaveCounter()
+   {
+    waveCounter.text = "Oleada " + currentWave.ToString() + "/" + wavesToWin.ToString();
    }
 
 

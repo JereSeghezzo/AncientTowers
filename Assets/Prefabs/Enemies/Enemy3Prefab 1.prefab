@@ -1110,6 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 200
+  damage: 20
   goldDrop: 0
   gameManager: {fileID: 0}
   enemieType: 2

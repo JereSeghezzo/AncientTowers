@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public int enemyHealth = 5;
+    public int damage;
     public int goldDrop; 
     public GameManager gameManager;
     enum DataType {Skeleton, Enemie2, Enemie3, Enemie4}
@@ -27,6 +28,7 @@ public class EnemyStats : MonoBehaviour
     {
         if (col.gameObject.tag == "MainTower")
         {
+          col.GetComponent<TowerMain>().TakeDamage(damage);
           EnemyDeath();
         }
     }

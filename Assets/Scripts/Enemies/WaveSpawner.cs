@@ -44,6 +44,7 @@ public class WaveSpawner : MonoBehaviour
       gameManager.DeactivateNextWaveButton();
       currWave++;
       waveValue = currWave;
+      gameManager.currentWave = currWave;
       GenerateEnemies();
 
       spawnInterval = waveDuration / enemiesToSpawn.Count;
