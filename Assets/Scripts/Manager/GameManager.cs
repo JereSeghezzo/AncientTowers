@@ -30,8 +30,9 @@ public class GameManager : MonoBehaviour
     public int cannonTowerSellValue, archerTowerSellValue,mortarTowerSellValue,magicTowerSellValue;
 
     [Header("Obstacles Costs")]
-    public int treeRemoveCost;
-    public int bigTreeRemoveCost;
+    public int tree1RemoveCost;
+    public int tree2RemoveCost;
+    public int tree3RemoveCost;
     public int rockRemoveCost;
     public int bigRockRemoveCost;
 

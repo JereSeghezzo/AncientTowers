@@ -6,7 +6,7 @@ public class ObstacleValueController : MonoBehaviour
 {
     public GameManager gameManager;
 
-    enum DataType {Tree, Rock, BigTree, BigRock}
+    enum DataType {Tree1, Tree2, Tree3, Rock, BigRock}
     [SerializeField] DataType obstacleType;
 
     public int RemoveCost;
@@ -19,9 +19,10 @@ public class ObstacleValueController : MonoBehaviour
 
    void SelectValue()
     {
-     if(obstacleType == DataType.Tree) RemoveCost = gameManager.treeRemoveCost; 
+     if(obstacleType == DataType.Tree1) RemoveCost = gameManager.tree1RemoveCost; 
+     if(obstacleType == DataType.Tree2) RemoveCost = gameManager.tree2RemoveCost; 
+      if(obstacleType == DataType.Tree3) RemoveCost = gameManager.tree3RemoveCost; 
      if(obstacleType == DataType.Rock) RemoveCost = gameManager.rockRemoveCost; 
-     if(obstacleType == DataType.BigTree) RemoveCost = gameManager.bigTreeRemoveCost; 
      if(obstacleType == DataType.BigRock) RemoveCost = gameManager.bigRockRemoveCost;
     } 
 }
