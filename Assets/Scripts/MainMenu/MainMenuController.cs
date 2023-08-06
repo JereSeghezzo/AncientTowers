@@ -27,6 +27,10 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Level 2"); // Reemplaza "GameScene" con el nombre de tu escena de juego
     }
+    public void PlayLevel3()
+    {
+        SceneManager.LoadScene("Level 3"); // Reemplaza "GameScene" con el nombre de tu escena de juego
+    }
 
     public void QuitGame()
     {
