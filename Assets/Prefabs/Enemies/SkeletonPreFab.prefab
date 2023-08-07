@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 30
-  damage: 5
+  damage: 3
   goldDrop: 0
   gameManager: {fileID: 0}
   enemieType: 0
