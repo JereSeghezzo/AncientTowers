@@ -10,6 +10,8 @@ public class EnemyStats : MonoBehaviour
     public int damage;
     public int goldDrop; 
     public GameManager gameManager;
+    public bool venom;
+    public float venomCounter;
     enum DataType {Skeleton, BlackSkeleton, Vampire, Golem, Goblin}
     [SerializeField] DataType enemieType;
 
@@ -22,6 +24,15 @@ public class EnemyStats : MonoBehaviour
       gameManager.amountOfEnemies++;
       enemyHealth = maxHealth;
       healthBar.UpdateHealthBar(maxHealth, enemyHealth);
+    }
+
+    void FixedUpdate() 
+    {
+      if(venomCounter > 0)
+      {
+        venomCounter -= Time.deltaTime;
+        venom = true;
+      } else  venom = false;
     }
 
     void OnDisable()
@@ -42,7 +53,12 @@ public class EnemyStats : MonoBehaviour
    {
     enemyHealth -= damage;
     healthBar.UpdateHealthBar(maxHealth, enemyHealth);
-    if(enemyHealth <= 0)
+     CheckEnemyHealth();
+   }
+
+   void CheckEnemyHealth()
+   {
+       if(enemyHealth <= 0)
     {
         GoldDrop();
         EnemyDeath();
@@ -68,5 +84,26 @@ public class EnemyStats : MonoBehaviour
     {
        gameManager.playerCoins += goldDrop;
        gameManager.UpdateMoneyText();  
+    }
+
+    public void VenomDebuff(float seconds)
+    {
+     venomCounter = seconds; 
+     venom = true;
+     StartCoroutine(VenomDamage());
+     Debug.Log("VenomDamage");
+    }
+
+    IEnumerator VenomDamage()
+    {
+      if(venom)
+      {
+     enemyHealth -= (int)(maxHealth * 0.05);
+     healthBar.UpdateHealthBar(maxHealth, enemyHealth);
+     CheckEnemyHealth();
+     yield return new WaitForSeconds(1f);
+     StartCoroutine(VenomDamage());
+      }
+
     }
 }

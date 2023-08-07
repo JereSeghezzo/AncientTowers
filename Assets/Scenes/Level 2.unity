@@ -1365,7 +1365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56369828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45978,7 +45978,7 @@ MonoBehaviour:
     type: 3}
   archerTowerPrefab: {fileID: 6804320326778657662, guid: 7e7bc0ca686ede94cb4ca0ae85aed930,
     type: 3}
-  magicTowerPrefab: {fileID: 6577076659904670434, guid: 22be16de646aced4ea45c712173db107,
+  magicTowerPrefab: {fileID: 6900936807544299460, guid: 22be16de646aced4ea45c712173db107,
     type: 3}
   towerMenu: {fileID: 664820192}
   towerToBuild: {fileID: 0}

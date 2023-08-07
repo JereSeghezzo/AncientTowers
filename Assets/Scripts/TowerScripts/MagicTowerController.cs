@@ -11,6 +11,7 @@ public class MagicTowerController : MonoBehaviour
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
+    public GameObject splashZonePrefab;
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
@@ -76,11 +77,13 @@ public class MagicTowerController : MonoBehaviour
 
     void Shoot()
     {
+        //Debug.Log("Disparo");
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        CannonBullet bullet = bulletGo.GetComponent<CannonBullet>();
+        GameObject zoneGo = (GameObject)Instantiate(splashZonePrefab, target.transform.position, Quaternion.identity);
+        MagicProjectile bullet = bulletGo.GetComponent<MagicProjectile>();
 
         if (bullet != null)
-            bullet.Seek(target);
+            bullet.Seek(zoneGo.GetComponent<Transform>());
     }
 
 
