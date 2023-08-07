@@ -21,7 +21,7 @@ public class MagicProjectile : MonoBehaviour
         target = _target;
         }
     }
-    void Update()
+    void FixedUpdate()
     {
      
      riseTime -= Time.deltaTime;

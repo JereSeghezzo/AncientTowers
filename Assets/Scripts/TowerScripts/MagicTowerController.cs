@@ -21,7 +21,7 @@ public class MagicTowerController : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (target == null)
             return;

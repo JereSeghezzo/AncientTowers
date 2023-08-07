@@ -23,7 +23,7 @@ public class CannonTowerController : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (target == null)
             return;

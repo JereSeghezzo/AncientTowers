@@ -20,7 +20,7 @@ public class ArcherTowerController : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         if (target == null)
             return;
