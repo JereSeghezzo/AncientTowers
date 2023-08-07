@@ -13480,7 +13480,7 @@ MonoBehaviour:
   cannonTowerBuyValue: 200
   archerTowerBuyValue: 150
   mortarTowerBuyValue: 400
-  magicTowerBuyValue: 9999
+  magicTowerBuyValue: 600
   towerSellPricePercent: 0.6
   towerInflation: 0.7
   cannonTowerSellValue: 100
