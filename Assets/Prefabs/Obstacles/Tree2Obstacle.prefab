@@ -36,7 +36,7 @@ Transform:
   - {fileID: 8624878505835580102}
   - {fileID: 756342583617055446}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1917523128253289001
 Rigidbody:
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  obstacleType: 0
+  obstacleType: 1
   RemoveCost: 0
 --- !u!1 &5348914621738017266
 GameObject:
