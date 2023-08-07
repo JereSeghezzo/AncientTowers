@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public GameObject nextWaveButton;
     public int goldForWave;
+    public TouchSelection touchSelection;
 
     [Header("Tower Prices")]
     public int cannonTowerBuyValue;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public int blackSkeletonGoldDrop;
     public int vampireGoldDrop;
     public int golemGoldDrop;
+    public int goblinGoldDrop;
 
     [HideInInspector]
     public int amountOfEnemies;
@@ -147,12 +149,14 @@ public class GameManager : MonoBehaviour
 
    public void GameLost()
    {
+    touchSelection.MenuModeOn();
     loseScreen.SetActive(true);
     Time.timeScale = 0f;
    }
 
     public void GameWon()
    {
+    touchSelection.MenuModeOn();
     winScreen.SetActive(true);
     Time.timeScale = 0f;
    }

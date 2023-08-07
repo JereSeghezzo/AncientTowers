@@ -46961,7 +46961,7 @@ MonoBehaviour:
   magicTowers: 0
   winScreen: {fileID: 682365172}
   loseScreen: {fileID: 2124601895}
-  mainTower: {fileID: 0}
+  mainTower: {fileID: 989467312}
   wavesToWin: 15
   currentWave: 0
   waveCounter: {fileID: 428718615}

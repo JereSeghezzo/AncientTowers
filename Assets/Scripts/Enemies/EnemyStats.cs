@@ -9,7 +9,7 @@ public class EnemyStats : MonoBehaviour
     public int damage;
     public int goldDrop; 
     public GameManager gameManager;
-    enum DataType {Skeleton, BlackSkeleton, Vampire, Golem}
+    enum DataType {Skeleton, BlackSkeleton, Vampire, Golem, Goblin}
     [SerializeField] DataType enemieType;
 
     void Start()
@@ -49,6 +49,7 @@ public class EnemyStats : MonoBehaviour
      if(enemieType == DataType.Vampire) goldDrop = gameManager.vampireGoldDrop;
      if(enemieType == DataType.Golem) goldDrop = gameManager.golemGoldDrop; 
      if(enemieType == DataType.BlackSkeleton) goldDrop = gameManager.blackSkeletonGoldDrop;
+     if(enemieType == DataType.Goblin) goldDrop = gameManager.goblinGoldDrop;
     }
 
     void EnemyDeath()

@@ -104,7 +104,7 @@ public class TouchSelection : MonoBehaviour
     void ObstacleSelection()
     {
       menuMode = true;
-      removeObstacleCost.text = "Quieres eliminar este obstaculo por "+ selection.GetComponent<ObstacleValueController>().RemoveCost.ToString() +" de oro?";
+      removeObstacleCost.text = "¿Quieres eliminar este obstaculo por "+ selection.GetComponent<ObstacleValueController>().RemoveCost.ToString() +" de oro?";
        removeObstaclePopup.SetActive(true);
        buildTowerPopup.SetActive(false);
        towerMenuController.towerToBuild = null;
@@ -143,6 +143,11 @@ public class TouchSelection : MonoBehaviour
     //menuMode = false;
     towerMenuController.sellMenu.SetActive(false);
     //towerMenuController.upgradesMenu.SetActive(false);
+  }
+
+  public void MenuModeOn()
+  {
+    menuMode = true;
   }
 
 
