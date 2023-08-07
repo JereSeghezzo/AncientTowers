@@ -27,6 +27,7 @@ public void TakeDamage(int damage)
     Debug.Log("Colision detectada");
     if(towerHealth <= 0)
     {
+      towerHealth = 0;
       Debug.Log("Perdiste");
       gameManager.GameLost();
     }
