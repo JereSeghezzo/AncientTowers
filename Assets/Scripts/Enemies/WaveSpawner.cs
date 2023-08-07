@@ -43,11 +43,11 @@ public class WaveSpawner : MonoBehaviour
 
     public void GenerateWave()
     {
-      gameManager.DeactivateNextWaveButton();
       waveCounter++;
       currWave = currWave * waveMultiplier;
       waveValue = (int)currWave;
       gameManager.currentWave = waveCounter;
+      gameManager.DeactivateNextWaveButton();
       GenerateEnemies();
 
       spawnInterval = waveDuration / enemiesToSpawn.Count;

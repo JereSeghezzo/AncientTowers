@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
    }
    public void DeactivateNextWaveButton()
    {
+    UpdateWaveCounter();
     nextWaveButton.SetActive(false);
    }
    public void EnemyKilled()
@@ -100,6 +101,7 @@ public class GameManager : MonoBehaviour
     {
      GoldForSurvival(); 
      ToggleNextWaveButton();
+     UpdateMoneyText(); 
      Debug.Log("Oleada Terminada");
      if(wavesToWin <= currentWave)
      {
