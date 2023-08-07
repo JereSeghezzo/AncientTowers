@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject nextWaveButton;
     public int goldForWave;
     public TouchSelection touchSelection;
+    public WaveSpawner waveSpawner;
 
     [Header("Tower Prices")]
     public int cannonTowerBuyValue;
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
    }
    public void EnemyKilled()
    {
-    if(amountOfEnemies <= 0)
+    if(amountOfEnemies <= 0 && waveSpawner.enemiesToSpawn.Count <= 0)
     {
      GoldForSurvival(); 
      ToggleNextWaveButton();
