@@ -99,7 +99,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 70
   riseSpeed: 1.3
-  riseTime: 0.18
+  riseTime: 0.2
   areaDamage: 60
   splashZonePrefab: {fileID: 4408543832287240218, guid: 415cfd57acf0b5d4ea18d8d61e6de338,
     type: 3}

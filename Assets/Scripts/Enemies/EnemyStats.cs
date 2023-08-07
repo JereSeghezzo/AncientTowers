@@ -5,18 +5,23 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public int enemyHealth = 5;
+    public int enemyHealth;
+    public int maxHealth; 
     public int damage;
     public int goldDrop; 
     public GameManager gameManager;
     enum DataType {Skeleton, BlackSkeleton, Vampire, Golem, Goblin}
     [SerializeField] DataType enemieType;
 
+    public HealthBar healthBar;
+
     void Start()
     {
       gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
       SelectValues();
       gameManager.amountOfEnemies++;
+      enemyHealth = maxHealth;
+      healthBar.UpdateHealthBar(maxHealth, enemyHealth);
     }
 
     void OnDisable()
@@ -36,6 +41,7 @@ public class EnemyStats : MonoBehaviour
    public void TakeDamage(int damage)
    {
     enemyHealth -= damage;
+    healthBar.UpdateHealthBar(maxHealth, enemyHealth);
     if(enemyHealth <= 0)
     {
         GoldDrop();
