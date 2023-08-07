@@ -14254,7 +14254,7 @@ MonoBehaviour:
     cost: 10
   currWave: 1
   waveCounter: 0
-  waveMultiplier: 2
+  waveMultiplier: 1.5
   waveValue: 0
   enemiesToSpawn: []
   spawnLocation: {fileID: 528161302}

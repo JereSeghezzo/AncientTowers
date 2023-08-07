@@ -8,9 +8,9 @@ public class WaveSpawner : MonoBehaviour
     public GameManager gameManager;
 
     public List<Enemy> enemies = new List<Enemy>();
-    public int currWave;
+    public float currWave;
     public int waveCounter;
-    public int waveMultiplier;
+    public float waveMultiplier;
     public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
     
@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
     public void GenerateWave()
     {
       waveCounter++;
-      currWave = currWave * waveMultiplier;
+      currWave =  Mathf.Ceil(currWave * waveMultiplier);
       waveValue = (int)currWave;
       gameManager.currentWave = waveCounter;
       gameManager.DeactivateNextWaveButton();

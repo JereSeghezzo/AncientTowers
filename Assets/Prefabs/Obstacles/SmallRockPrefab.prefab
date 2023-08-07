@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  obstacleType: 1
+  obstacleType: 3
   RemoveCost: 0
 --- !u!114 &780718451311560067
 MonoBehaviour:

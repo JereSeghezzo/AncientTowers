@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c5f4c15efa33040a329d362f3a56b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 250
+  enemyHealth: 100
   damage: 25
   goldDrop: 0
   gameManager: {fileID: 0}
