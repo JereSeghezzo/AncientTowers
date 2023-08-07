@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 60
-  riseSpeed: 0.8
-  riseTime: 0.1
+  speed: 70
+  riseSpeed: 1.3
+  riseTime: 0.18
   areaDamage: 60
   splashZonePrefab: {fileID: 4408543832287240218, guid: 415cfd57acf0b5d4ea18d8d61e6de338,
     type: 3}

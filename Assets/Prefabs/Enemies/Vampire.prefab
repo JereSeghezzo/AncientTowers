@@ -937,8 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c5f4c15efa33040a329d362f3a56b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 100
-  damage: 25
+  enemyHealth: 150
+  damage: 15
   goldDrop: 0
   gameManager: {fileID: 0}
   enemieType: 2
@@ -961,8 +961,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.06701517, y: 0.15506995, z: 0.05833149}
-  m_Center: {x: 0.0003554821, y: 0.42246503, z: 0.09333563}
+  m_Size: {x: 0.06701517, y: 0.9035326, z: 0.05833149}
+  m_Center: {x: 0.0003554821, y: 0.4561472, z: 0.09333563}
 --- !u!54 &-8834552822539317990
 Rigidbody:
   m_ObjectHideFlags: 0

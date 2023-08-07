@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 70
-  damage: 12
+  damage: 9
   goldDrop: 0
   gameManager: {fileID: 0}
   enemieType: 1
@@ -988,8 +988,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 10.465852, z: 1}
+  m_Center: {x: 0, y: 2.8876739, z: 0}
 --- !u!54 &7630176618364993021
 Rigidbody:
   m_ObjectHideFlags: 0
