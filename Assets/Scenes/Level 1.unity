@@ -606,7 +606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360, y: -11}
+  m_AnchoredPosition: {x: 315, y: -11}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11082791
@@ -4931,7 +4931,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209, y: -10.999939}
+  m_AnchoredPosition: {x: -242, y: -10.999939}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &164999058
@@ -12567,7 +12567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -681, y: -11}
+  m_AnchoredPosition: {x: -693, y: -11}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466220256
@@ -14294,13 +14294,10 @@ MonoBehaviour:
     cost: 1
   - enemyPrefab: {fileID: 6971906798213300317, guid: dae78dd08379987448d36313554ead4f,
       type: 3}
-    cost: 1
-  - enemyPrefab: {fileID: 6971906798213300317, guid: dae78dd08379987448d36313554ead4f,
-      type: 3}
-    cost: 1
+    cost: 3
   currWave: 1
   waveCounter: 0
-  waveMultiplier: 1.5
+  waveMultiplier: 1.2
   waveValue: 0
   enemiesToSpawn: []
   spawnLocation: {fileID: 528161302}
@@ -17916,7 +17913,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 815, y: -11}
+  m_AnchoredPosition: {x: 762, y: -11}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698867249
