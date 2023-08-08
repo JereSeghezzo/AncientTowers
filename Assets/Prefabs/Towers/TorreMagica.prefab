@@ -1110,9 +1110,9 @@ MonoBehaviour:
   damageLvl: 0
   rangeLvl: 0
   fireRateLvl: 0
-  damagePrice: 250
-  rangePrice: 200
-  fireRatePrice: 250
+  damagePrice: 150
+  rangePrice: 110
+  fireRatePrice: 150
   lvlMultiplier: 0.6
 --- !u!1 &7212805725613899009
 GameObject:
