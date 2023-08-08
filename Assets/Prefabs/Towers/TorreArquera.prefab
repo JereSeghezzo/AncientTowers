@@ -99,10 +99,12 @@ MonoBehaviour:
   target: {fileID: 0}
   range: 12
   fireRate: 1.3
+  damage: 0
   bulletPrefab: {fileID: 5366112179788014822, guid: a5290b86575c9f247b8418651ba4eb8a,
     type: 3}
   firePoint: {fileID: 6709249277851690259}
   currentEnemyDistance: 0
+  towerStats: {fileID: 553195480016176238}
 --- !u!1 &2101944100698925215
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +149,7 @@ GameObject:
   - component: {fileID: 3425933678656101714}
   - component: {fileID: 5673312971563569411}
   - component: {fileID: 2323446328625441993}
+  - component: {fileID: 553195480016176238}
   m_Layer: 8
   m_Name: TorreArquera
   m_TagString: Tower
@@ -248,3 +251,25 @@ MonoBehaviour:
   TowerType: 1
   buyValue: 0
   sellValue: 0
+--- !u!114 &553195480016176238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804320326778657662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193d43331a8f39c459162eeeee297f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  range: 9
+  fireRate: 1
+  damageLvl: 0
+  rangeLvl: 0
+  fireRateLvl: 0
+  damagePrice: 150
+  rangePrice: 60
+  fireRatePrice: 120
+  lvlMultiplier: 0.6

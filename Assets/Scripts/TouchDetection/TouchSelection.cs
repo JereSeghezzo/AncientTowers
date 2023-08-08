@@ -14,6 +14,8 @@ public class TouchSelection : MonoBehaviour
     public GameObject buildTowerPopup, removeObstaclePopup;
     [SerializeField] TowerMenuController towerMenuController;
     static public bool menuMode;
+     [Header("Upgrade System")]
+    public UpgradeSystem upgradeSystem;
 
     void Start() 
     {
@@ -82,6 +84,8 @@ public class TouchSelection : MonoBehaviour
       objetive.text = "Tower";
       towerMenuController.OpenUpgradeMenu();
       towerMenuController.towerToBuild = null;
+      upgradeSystem.selectedTower = selection.GetComponent<TowerStats>();
+      upgradeSystem.UpdateSelectedTower();
     }
     public void BuildTower()
     {
@@ -140,9 +144,7 @@ public class TouchSelection : MonoBehaviour
 
   public void CancelSellTower()
   {
-    //menuMode = false;
     towerMenuController.sellMenu.SetActive(false);
-    //towerMenuController.upgradesMenu.SetActive(false);
   }
 
   public void MenuModeOn()

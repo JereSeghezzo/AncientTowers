@@ -17,6 +17,9 @@ public class TowerMenuController : MonoBehaviour
     public GameManager gameManager;
      [Header("Tower Price Text")]
     public TMP_Text sellTowerValue;
+    [Header("Upgrade System")]
+    public UpgradeSystem upgradeSystem;
+
     void Start()
     {
         towerMenu.SetActive(false); 

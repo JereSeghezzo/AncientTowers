@@ -6,6 +6,7 @@ public class MortarTowerController : MonoBehaviour
 {
     public Transform target;
     public float range = 15f;
+    public float damage;
 
     public float fireRate = 1f;
     private float fireCountdown = 0f;
@@ -15,8 +16,10 @@ public class MortarTowerController : MonoBehaviour
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
+    public TowerStats towerStats;
     void Start()
     {
+        UpdateStats();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -84,6 +87,7 @@ public class MortarTowerController : MonoBehaviour
 
         if (bullet != null)
             bullet.Seek(zoneGo.GetComponent<Transform>());
+            bullet.damage = (int)damage;
     }
 
 
@@ -91,5 +95,11 @@ public class MortarTowerController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+     public void UpdateStats()
+    {
+     range = towerStats.range;
+     fireRate = towerStats.fireRate;
+     damage = towerStats.damage;   
     }
 }

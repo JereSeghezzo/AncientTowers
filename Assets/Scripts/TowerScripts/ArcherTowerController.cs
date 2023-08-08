@@ -8,15 +8,19 @@ public class ArcherTowerController : MonoBehaviour
     public float range = 15f;
 
     public float fireRate = 1f;
+    public float damage;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
+
+    public TowerStats towerStats;
     void Start()
     {   
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+      UpdateStats();
+      InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
 
@@ -76,11 +80,13 @@ public class ArcherTowerController : MonoBehaviour
 
     void Shoot()
     {
+        UpdateStats();
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         ArcherArrow bullet = bulletGo.GetComponent<ArcherArrow>();
 
         if (bullet != null)
             bullet.Seek(target);
+            bullet.damage = (int)damage;
     }
 
 
@@ -88,5 +94,12 @@ public class ArcherTowerController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void UpdateStats()
+    {
+     range = towerStats.range;
+     fireRate = towerStats.fireRate;
+     damage = towerStats.damage;   
     }
 }

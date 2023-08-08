@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour
     public GameManager gameManager;
     public bool venom;
     public float venomCounter;
+    public float venomDamage;
     enum DataType {Skeleton, BlackSkeleton, Vampire, Golem, Goblin}
     [SerializeField] DataType enemieType;
 
@@ -98,7 +99,7 @@ public class EnemyStats : MonoBehaviour
     {
       if(venom)
       {
-     enemyHealth -= (int)(maxHealth * 0.05);
+     enemyHealth -= (int)(maxHealth * venomDamage);
      healthBar.UpdateHealthBar(maxHealth, enemyHealth);
      CheckEnemyHealth();
      yield return new WaitForSeconds(1f);

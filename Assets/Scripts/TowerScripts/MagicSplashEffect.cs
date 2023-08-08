@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MagicSplashEffect : MonoBehaviour
 {
-
- public int splashDamage;
+ public float damage;
  public GameObject visuals;
  public float areaDuration;
  public float debuffDuration;
@@ -27,6 +26,7 @@ public class MagicSplashEffect : MonoBehaviour
       if(col.gameObject.tag == "Enemy")
         {
           col.gameObject.GetComponent<EnemyStats>().VenomDebuff(debuffDuration);
+          col.gameObject.GetComponent<EnemyStats>().venomDamage = damage;
         }   
     }
 }

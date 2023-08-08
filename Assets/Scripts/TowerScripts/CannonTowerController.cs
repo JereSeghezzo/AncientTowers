@@ -8,6 +8,7 @@ public class CannonTowerController : MonoBehaviour
     public float range = 15f;
 
     public float fireRate = 1f;
+    public float damage;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
@@ -17,8 +18,11 @@ public class CannonTowerController : MonoBehaviour
 
      public float rotationSpeed = 5.0f;
      public GameObject cannon;
+
+      public TowerStats towerStats;
     void Start()
     {
+        UpdateStats();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -84,6 +88,7 @@ public class CannonTowerController : MonoBehaviour
 
         if (bullet != null)
             bullet.Seek(target);
+            bullet.damage = (int)damage;
     }
 
 
@@ -97,5 +102,12 @@ public class CannonTowerController : MonoBehaviour
     {
         Vector3 targetPosition = new Vector3(target.transform.position.x, 90f, target.transform.position.z);
         cannon.transform.LookAt(targetPosition);  
+    }
+
+        public void UpdateStats()
+    {
+     range = towerStats.range;
+     fireRate = towerStats.fireRate;
+     damage = towerStats.damage;   
     }
 }

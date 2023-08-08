@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   range: 15
+  damage: 0
   fireRate: 0.2
   bulletPrefab: {fileID: 7871824266851266524, guid: b3362f22548cc84469b3b943febf888e,
     type: 3}
@@ -106,6 +107,7 @@ MonoBehaviour:
     type: 3}
   firePoint: {fileID: 1263531476707155357}
   currentEnemyDistance: 0
+  towerStats: {fileID: 8548039822468934266}
 --- !u!1 &5553039285513165586
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +204,7 @@ GameObject:
   - component: {fileID: 1879907105672859476}
   - component: {fileID: 2551217025310065377}
   - component: {fileID: 5759380421017543090}
+  - component: {fileID: 8548039822468934266}
   m_Layer: 8
   m_Name: TorreMortero
   m_TagString: Tower
@@ -302,3 +305,25 @@ MonoBehaviour:
   TowerType: 2
   buyValue: 0
   sellValue: 0
+--- !u!114 &8548039822468934266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643112690127513894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193d43331a8f39c459162eeeee297f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  range: 10
+  fireRate: 0.16
+  damageLvl: 0
+  rangeLvl: 0
+  fireRateLvl: 0
+  damagePrice: 200
+  rangePrice: 50
+  fireRatePrice: 250
+  lvlMultiplier: 0.6

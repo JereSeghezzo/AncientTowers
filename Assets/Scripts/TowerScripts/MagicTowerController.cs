@@ -8,6 +8,7 @@ public class MagicTowerController : MonoBehaviour
     public float range = 15f;
 
     public float fireRate = 1f;
+    public float damage;
     private float fireCountdown = 0f;
 
     public GameObject bulletPrefab;
@@ -15,8 +16,11 @@ public class MagicTowerController : MonoBehaviour
     public Transform firePoint;
     //float shortestDistance;
     public float currentEnemyDistance;
+
+    public TowerStats towerStats;
     void Start()
     {
+        UpdateStats();
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
@@ -84,6 +88,7 @@ public class MagicTowerController : MonoBehaviour
 
         if (bullet != null)
             bullet.Seek(zoneGo.GetComponent<Transform>());
+            bullet.damage = damage;
     }
 
 
@@ -91,5 +96,11 @@ public class MagicTowerController : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+    public void UpdateStats()
+    {
+     range = towerStats.range;
+     fireRate = towerStats.fireRate;
+     damage = towerStats.damage;   
     }
 }

@@ -7,6 +7,7 @@ public class MagicProjectile : MonoBehaviour
     public Transform target;
 
     public float speed;
+    public float damage;
     public float riseSpeed;
     public float riseTime;
     public int areaDamage;
@@ -57,7 +58,7 @@ public class MagicProjectile : MonoBehaviour
             
            landZone = target.gameObject.GetComponent<MagicSplashEffect>();
            landZone.Activate();
-           //landZone.splashDamage = areaDamage;
+           landZone.damage = damage;
             HitTarget();
             return;
         }

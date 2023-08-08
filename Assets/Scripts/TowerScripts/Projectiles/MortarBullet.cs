@@ -9,7 +9,7 @@ public class MortarBullet : MonoBehaviour
     public float speed;
     public float riseSpeed;
     public float riseTime;
-    public int areaDamage;
+    public int damage;
     public GameObject splashZonePrefab;
     MortarSplashDamageScript landZone;
 
@@ -57,7 +57,7 @@ public class MortarBullet : MonoBehaviour
             
            landZone = target.gameObject.GetComponent<MortarSplashDamageScript>();
            landZone.Activate();
-           landZone.splashDamage = areaDamage;
+           landZone.splashDamage = damage;
             HitTarget();
             return;
         }
