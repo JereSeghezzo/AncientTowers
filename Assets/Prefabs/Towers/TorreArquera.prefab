@@ -272,4 +272,4 @@ MonoBehaviour:
   damagePrice: 80
   rangePrice: 60
   fireRatePrice: 70
-  lvlMultiplier: 0.6
+  lvlMultiplier: 0.5

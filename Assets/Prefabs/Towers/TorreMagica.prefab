@@ -1106,14 +1106,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0.05
   range: 5
-  fireRate: 0.07
+  fireRate: 0.09
   damageLvl: 0
   rangeLvl: 0
   fireRateLvl: 0
   damagePrice: 150
   rangePrice: 110
   fireRatePrice: 150
-  lvlMultiplier: 0.6
+  lvlMultiplier: 0.5
 --- !u!1 &7212805725613899009
 GameObject:
   m_ObjectHideFlags: 0

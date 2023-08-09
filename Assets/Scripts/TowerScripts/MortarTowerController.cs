@@ -81,6 +81,7 @@ public class MortarTowerController : MonoBehaviour
     void Shoot()
     {
         //Debug.Log("Disparo");
+        UpdateStats();
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject zoneGo = (GameObject)Instantiate(splashZonePrefab, target.transform.position, Quaternion.identity);
         MortarBullet bullet = bulletGo.GetComponent<MortarBullet>();

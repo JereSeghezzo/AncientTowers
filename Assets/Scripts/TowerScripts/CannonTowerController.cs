@@ -82,6 +82,7 @@ public class CannonTowerController : MonoBehaviour
 
     void Shoot()
     {
+        UpdateStats();
         LookAtTarget();
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         CannonBullet bullet = bulletGo.GetComponent<CannonBullet>();

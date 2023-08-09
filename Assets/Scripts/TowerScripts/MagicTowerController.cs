@@ -82,6 +82,7 @@ public class MagicTowerController : MonoBehaviour
     void Shoot()
     {
         //Debug.Log("Disparo");
+        UpdateStats();
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         GameObject zoneGo = (GameObject)Instantiate(splashZonePrefab, target.transform.position, Quaternion.identity);
         MagicProjectile bullet = bulletGo.GetComponent<MagicProjectile>();
